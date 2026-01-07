@@ -11,9 +11,32 @@ Many tools are available for various tasks in plant genomics. Finding the right 
 
 ### InterProScan5
 
-InterPro [https://doi.org/10.1093/bioinformatics/btu031] is a database integrating predictive information about protein function from a number of partner resources like CATH, CDD, PANTHER, and Pfam to name a few. It is hosted and maintained by EMBL-EBI. 
+Documentation: https://interproscan-docs.readthedocs.io/en/latest/
+
+InterPro [https://doi.org/10.1093/bioinformatics/btu031] is a database integrating predictive information about protein function from a number of partner resources like CATH, CDD, PANTHER, and Pfam to name a few. It is hosted and maintained by EMBL-EBI. InterProScan5 is a software for functional annotation of proteins. It is integrated with the InterPro database and can be installed locally. Step by step instructions for using the tool can be found at https://github.com/PuckerLab/PlantGenomicsGuide 
 
 ### Mercator4
+
+Mercator4 is an online tool for protein annotation of land plants and algae. It assigns protein functions in a hierarchical manner with each sub-node being more specific than the previous node and provides options to include Swiss-Prot annotations. The protein annotations can further be visualized as a tree structure or a heat map. After obtaining the functional annotation mapping file from Mercator4 it is also possible to do an enrichment analysis of genes of your interest using the database. Following is a step by step guide for using Mercator4:
+
+```
+
+- Prepare input FASTA file of protein or cDNA sequences in the correct FASTA format.
+
+- Assess the correctness of FASTA file by uploading it to the Mercator4 FASTA validator.
+
+- Upload the file in the protein annotation section of the database and submit the job. It is advisable to provide your email ID for long-running jobs.
+
+- In case you have a list of genes of interest (GOI) say, differentially expressed genes for example, you could opt for the enrichment analysis as follows:
+
+    - Upload the Mercator4 mapping file.
+    - Here you can specify the list of your GOIs and background genes' list.
+    - Make sure that the gene IDs you specify in this step and the gene IDs in the Mercator annotation mapping file are the same.
+    - You can choose to perform either over-representation or under-representation analysis or both
+    - Once you submit the job for the enrichmnet  analysis, you will get the results that can be downloaded as a TSV file
+```
+
+
 
 ### KEGG
 
