@@ -11,6 +11,8 @@ Many tools are available for various tasks in plant genomics. Finding the right 
 
 ### InterProScan5
 
+InterPro [https://doi.org/10.1093/bioinformatics/btu031] is a database integrating predictive information about protein function from a number of partner resources like CATH, CDD, PANTHER, and Pfam to name a few. It is hosted and maintained by EMBL-EBI. 
+
 ### Mercator4
 
 ### KEGG
