@@ -54,13 +54,32 @@ Many tools are available for various tasks in plant genomics. Finding the right 
 
 ### TOGA
 
-## References
-
-
-
 ### Orthorefine
 
 ### SOI
+
+## Protein structure-based annotation tools
+
+### Dali
+
+### Foldseek
+
+## Expression analysis-based annotation tools
+
+### GENIE3
+
+### WGCNA
+
+## Annotation tools employing combined approaches
+
+### CoExpPhylo
+
+### KIPEs
+
+### DupyliCate
+
+## References
+
 
 
 If you have questions about plant genomics that were not answered by any of these resources, please feel free to get in touch with the Plant Biotechnology and Biotechnology research group at the University of Bonn.
