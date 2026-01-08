@@ -49,7 +49,7 @@ Kyoto Encyclopedia of Genes and Genomes (KEGG) [https://doi.org/10.1093/nar/gkae
 
 - Click the link sent to your email  ID within 24 hours to submit your job.
 
-- It is important to note that only one job canbe run at a time.
+- It is important to note that only one job can be run at a time.
 
 - After the annotation go to the KEGG mapper tool - 'Reconstruct' (https://www.kegg.jp/kegg/mapper/reconstruct.html) for pathway mapping.
 
@@ -57,9 +57,30 @@ Kyoto Encyclopedia of Genes and Genomes (KEGG) [https://doi.org/10.1093/nar/gkae
 
 ```
 
+### Blast2GO
 
-### BLAST2GO
+Blast2GO [https://doi.org/10.1155/2008/619832] is a user-friendly application for functional annotation. It is a suite of bioinformatics tools like BLAST and a number of databases like KEGG and InterProScan integrated with GO mapping and function assignment from these databases. It provides statistical summaries and nice features for visualization of the functional annotation results. However, only the basic version of the application is free for non-profit academic research purposes. The guideline below is a brief overview on using the basic version of Blast2GO for a simple functional annotation process.
 
+```
+- Register for the Blast2GO basic version at https://www.biobam.com/blast2go-basic/ You will receive the Blast2GO activation key via email.
+
+- Download Blast2GO here https://www.biobam.com/blast2go-previous-versions/
+
+- Select the executable depending on your operating system like Windows, Linux or Mac OS.
+
+- After installation, you will be prompted to enter the activation key. Enter it and restart the application.
+
+- Blast2GO provides options to run BLAST locally or online and interfaces with a number of databases like the nr, PIR, and Swiss-Prot to name a few.
+
+- There is also an option to directly load the BLAST result files into the application.
+
+- You can run a GO mapping where it interfaces with the GO database and maps your query sequences wwith relevant GO terms.
+
+- Next, you can also opt to run InterProScan to obtain the functional annotation for your sequences or directly use the run annotation option in the 'annot' menu.
+
+- After annotation, the analysis tab can be clicked to perform enrichment analysis and KEGG pathway mapping.
+
+```
 
 ## Ortholog finding tools
 
