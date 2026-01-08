@@ -99,7 +99,7 @@ git clone https://github.com/OrthoFinder/OrthoFinder.git
 
 cd OrthoFinder
 
-# Create an virtural environment named of3_env
+# Create an virtual environment named of3_env
 
 python3 -m venv of3_env
 
@@ -147,6 +147,12 @@ deactivate
 
 # Reactivate the environment when you want to use the tool again
 
+#Move to the OrthoFinder folder
+
+cd /path/to/OrthoFinder
+
+#activate the environment from within the OrthoFinder folder
+
 . of3_env/bin/activate
 
 ```
@@ -154,12 +160,30 @@ deactivate
 **Official documentation:** https://github.com/OrthoFinder/OrthoFinder
 
 
-
-
-
 ### SHOOT
 
+SHOOT [https://doi.org/10.1186/s13059-022-02652-8] is a phylogenetic search engine. It is an alternative to BLAST and an orthogonal approach to finding orthologs. Instead of searching for orthologs using sequence similarity, SHOOT directly relies on phylogenetic signal. It takes the query protein sequence, and searches it against a database of phylogenetic trees. It then places the sequence or more correctly grafts the sequence onto its suitable phylogenetic tree and returns the results along with the orthologs found for the specific sequence. 
+
+**Using SHOOT:**
+
+```
+- Visit the SHOOT search engine page https://www.shoot.bio/
+
+- Paste your query protein's amino acid sequence.
+
+- Select a suitable phylogenetic database from all the domains of life like plants.
+
+- You can also make the run more customized by tweaking the advanced options parameters like DIAMOND sensitivity.
+
+- Press SHOOT to submit your job.
+
+```
+
+**Official documentation:** https://github.com/davidemms/SHOOT
+
 ### FASTOMA
+
+
 
 ## Sequence similarity based tools (aligners)
 
