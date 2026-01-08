@@ -84,11 +84,11 @@ Blast2GO [https://doi.org/10.1155/2008/619832] is a user-friendly application fo
 
 ## Ortholog finding tools
 
-### OrthoFinder
+### 5. OrthoFinder
 
 OrthoFinder [https://doi.org/10.1101/2025.07.15.664860] is a widely used tool for ortholog identification. It identifies orthologous genes, and clusters them into orthogroups. These orthogroups are further analyzed to obtain gene and species trees. Gene duplication events are also reported using both these trees. The method is scalable to a large number of genomes. It helps in large scale comparative genomics across species and provides detailed statistics and summary of the results. 
 
-Installation:
+**Installation:**
 
 ```
 #clone the git repository in the destination folder of your choice
@@ -129,7 +129,13 @@ If OrthoFinder and its dependencies were successfully installed, it will complet
 
 ```
 
-Sample OrthoFinder command:
+**Sample OrthoFinder command:**
+
+```
+orthofinder -A mafft -T iqtree -f Sample_dir
+
+```
+
 
 
 
