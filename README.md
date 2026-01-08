@@ -139,7 +139,7 @@ In the above command the mandatory parameter is only the '-f' flag that takes in
 
 **After completing the OrthoFinder run:**
 
-'''
+```
 
 # deactivate the virtual environment
 
