@@ -9,13 +9,13 @@ Many tools are available for various tasks in plant genomics. Finding the right 
 
 ## Functional annotation database tools
 
-### InterProScan5
+### 1. InterProScan5
 
 Documentation: https://interproscan-docs.readthedocs.io/en/latest/
 
 InterPro [https://doi.org/10.1093/bioinformatics/btu031] is a database integrating predictive information about protein function from a number of partner resources like CATH, CDD, PANTHER, and Pfam to name a few. It is hosted and maintained by EMBL-EBI. InterProScan5 is a software for functional annotation of proteins. It is integrated with the InterPro database and can be installed locally. Step by step instructions for using the tool can be found at https://github.com/PuckerLab/PlantGenomicsGuide 
 
-### Mercator4
+### 2. Mercator4
 
 Mercator4 [https://doi.org/10.1007/978-1-0716-1609-3_9] [https://doi.org/10.1016/j.molp.2019.01.003] is an online tool for protein annotation of land plants and algae. It assigns protein functions in a hierarchical manner with each sub-node being more specific than the previous node and provides options to include Swiss-Prot annotations. The protein annotations can further be visualized as a tree structure or a heat map. After obtaining the functional annotation mapping file from Mercator4 it is also possible to do an enrichment analysis of genes of your interest using the database. Following is a step by step guide for using Mercator4:
 
@@ -36,7 +36,7 @@ Mercator4 [https://doi.org/10.1007/978-1-0716-1609-3_9] [https://doi.org/10.1016
     - Once you submit the job for the enrichmnet  analysis, you will get the results that can be downloaded as a TSV file
 ```
 
-### KEGG
+### 3. KEGG
 
 Kyoto Encyclopedia of Genes and Genomes (KEGG) [https://doi.org/10.1093/nar/gkae909] is a well-known database resource that helps in understanding biological functions of proteins from a molecular perspective. The annotation step using KEGG involves assigning KEGG Orthology (KO) identifiers to protein coding and RNA genes. The KEGG GENES dataset hosts a collection of genes and proteins from over 10000 complete genomes of cellular organisms and viruses and uses internal annotation tools like BlastKOALA, GhostKOALA, and KofamKOALA to assign the KO identifiers to obtain the functional orthologs. It integrates systemic, genomic, chemical and health information in the database and allows pathway mapping after the initial ortholog finding step using the assigned KO identifiers. This gives a better context-based information of the protein function in the organism and hence provides more cellular and organismal functional insights. KEGG can be used as follows for functional annotation of protein sequences:
 
@@ -57,7 +57,7 @@ Kyoto Encyclopedia of Genes and Genomes (KEGG) [https://doi.org/10.1093/nar/gkae
 
 ```
 
-### Blast2GO
+### 4. Blast2GO
 
 Blast2GO [https://doi.org/10.1155/2008/619832] is a user-friendly application for functional annotation. It is a suite of bioinformatics tools like BLAST and a number of databases like KEGG and InterProScan integrated with GO mapping and function assignment from these databases. It provides statistical summaries and nice features for visualization of the functional annotation results. However, only the basic version of the application is free for non-profit academic research purposes. The guideline below is a brief overview on using the basic version of Blast2GO for a simple functional annotation process.
 
