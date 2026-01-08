@@ -131,7 +131,7 @@ If OrthoFinder and its dependencies were successfully installed, it will complet
 
 Sample OrthoFinder command:
 
-```
+
 
 
 
