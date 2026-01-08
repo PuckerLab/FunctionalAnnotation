@@ -36,9 +36,27 @@ Mercator4 [https://doi.org/10.1007/978-1-0716-1609-3_9] [https://doi.org/10.1016
     - Once you submit the job for the enrichmnet  analysis, you will get the results that can be downloaded as a TSV file
 ```
 
-
-
 ### KEGG
+
+Kyoto Encyclopedia of Genes and Genomes (KEGG) [https://doi.org/10.1093/nar/gkae909] is a well-known database resource that helps in understanding biological functions of proteins from a molecular perspective. The annotation step using KEGG involves assigning KEGG Orthology (KO) identifiers to protein coding and RNA genes. The KEGG GENES dataset hosts a collection of genes and proteins from over 10000 complete genomes of cellular organisms and viruses and uses internal annotation tools like BlastKOALA, GhostKOALA, and KofamKOALA to assign the KO identifiers to obtain the functional orthologs. It integrates systemic, genomic, chemical and health information in the database and allows pathway mapping after the initial ortholog finding step using the assigned KO identifiers. This gives a better context-based information of the protein function in the organism and hence provides more cellular and organismal functional insights. KEGG can be used as follows for functional annotation of protein sequences:
+
+```
+- Upload your FASTA file of protein sequences to one of the internal annotation tools (BlastKOALA (https://www.kegg.jp/blastkoala/), GhostKOALA (https://www.kegg.jp/ghostkoala/), or KofamKOALA (https://www.genome.jp/tools/kofamkoala/)).
+
+- Select your reference gene set from eukaryotes, prokaryotes or viruses.
+
+- Provide your official email ID and request email confirmation.
+
+- Click the link sent to your email  ID within 24 hours to submit your job.
+
+- It is important to note that only one job canbe run at a time.
+
+- After the annotation go to the KEGG mapper tool - 'Reconstruct' (https://www.kegg.jp/kegg/mapper/reconstruct.html) for pathway mapping.
+
+- Upload the annotation results from the previous step into this tool and press exec. This file is a two column tab or space-separated file where the first column has the gene IDs of the query and the second column has the corresponding KO identifiers.
+
+```
+
 
 ### BLAST2GO
 
