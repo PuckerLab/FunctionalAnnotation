@@ -182,7 +182,50 @@ SHOOT [https://doi.org/10.1186/s13059-022-02652-8] is a phylogenetic search engi
 **Official documentation:** https://github.com/davidemms/SHOOT
 
 ### FASTOMA
+FASTOMA [https://doi.org/10.1038/s41592-024-02552-8] is another ortholog finding tool that combines ultrafast homology grouping with taxonomy-based sampling. It is an advanced update of the OMA algorithm and adopts a highly efficient parallel computing approach. It can take in multiple proteomes of species and also helps infer hierarchical orthologous groups (HOGs). Apart from the protein FASTA file for each of the species, it needs species tree in Newick format for all the species used in a particular run. 
 
+**Installing pre-requisites:**
+
+- FastOMA is a nextflow-based pipleine. nextflow needs Java 17 or above to be installed.
+
+- Java 17 can be installed with
+  ```
+  sudo apt install openjdk-17-jdk
+  ```
+  - Next nextflow needs to be installed for FastOMA to work and the steps to install it are as follows:
+ 
+  ```
+  # move to the desired destination folder
+
+  cd /path/to/destination/folder
+
+  # download nextflow
+    
+  curl -s https://get.nextflow.io | bash
+
+  # make nextflow executable
+
+  chmod +x executable
+
+  # If you are working on a UNIX-based system like Linux, update the bashrc file with the path of the destination folder containing the nextflow executable as follows:
+
+  nano ~/.bashrc
+
+  # add the following line at the end of the bashrc file
+
+  export PATH=$PATH:/path/to/destination/folder
+
+  # press ctrl+x and then when prompted y
+
+  # reload the bashrc file
+
+  source ~/.bashrc
+
+  ```
+
+  ** FastOMA installation**
+
+  
 
 
 ## Sequence similarity based tools (aligners)
