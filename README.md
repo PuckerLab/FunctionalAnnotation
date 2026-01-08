@@ -4,7 +4,7 @@
 
 ## Overview
 
-Many tools are available for various tasks in plant genomics. Finding the right tool for a certain purpose can be challenging. This repository provides an overview of recommended tools specifically for functional annotation in plant genomics. This documentation is a guide elucidating step-by-step usage of some widely used functional annotation tools in plant genomics. The tools covered range from user-friendly databases to advanced command-line tools. This will be of use to biologists interested in functional annotation of genes of interest in their own research. Each of the commands and usage instructions here are based on an example file named 'sample' and need to adapted based on the user's own use-case. If the user is not familiar with linux environment and packages for software installation, it is first recommended to read these relevant guidelines specified in https://github.com/PuckerLab/PlantGenomicsGuide.
+Many tools are available for various tasks in plant genomics. Finding the right tool for a certain purpose can be challenging. This repository provides an overview of recommended tools specifically for functional annotation in plant genomics. This documentation is a guide elucidating step-by-step usage of some widely used functional annotation tools in plant genomics. It is important to note that the installation method outlined for each of the tools is based on the ease-of-installation for users of all levels, and the possibility of errors and bugs that can be encountered while doing so. Hence, the installation method detailed can differ from the officially recommended installation methods in the respective tools' documentation pages. Further, the tools covered range from user-friendly databases to advanced command-line tools. This will be of use to biologists interested in functional annotation of genes of interest in their own research. Each of the commands and usage instructions here are based on an example file named 'sample' and need to adapted based on the user's own use-case. If the user is not familiar with linux environment and packages for software installation, it is first recommended to read these relevant guidelines specified in https://github.com/PuckerLab/PlantGenomicsGuide. 
 
 
 ## Functional annotation database tools
@@ -84,7 +84,56 @@ Blast2GO [https://doi.org/10.1155/2008/619832] is a user-friendly application fo
 
 ## Ortholog finding tools
 
-### OrthoFinder2
+### OrthoFinder
+
+OrthoFinder [https://doi.org/10.1101/2025.07.15.664860] is a widely used tool for ortholog identification. It identifies orthologous genes, and clusters them into orthogroups. These orthogroups are further analyzed to obtain gene and species trees. Gene duplication events are also reported using both these trees. The method is scalable to a large number of genomes. It helps in large scale comparative genomics across species and provides detailed statistics and summary of the results. 
+
+Installation:
+
+```
+#clone the git repository in the destination folder of your choice
+
+git clone https://github.com/OrthoFinder/OrthoFinder.git
+
+# move to the OrthoFinder folder
+
+cd OrthoFinder
+
+# Create an virtural environment named of3_env
+
+python3 -m venv of3_env
+
+# Activate of3_env
+
+. of3_env/bin/activate
+
+# Insall the required dependencies with pip
+
+pip install .
+
+# Test your installation
+
+# Print out help information
+
+orthofinder --help
+
+# Check the version
+
+orthofinder --version
+
+# Do a test run of OrthoFinder from the OrthoFinder folder
+
+orthofinder -f ExampleData
+
+If OrthoFinder and its dependencies were successfully installed, it will complete and display the time taken for the run without any errors.
+
+```
+
+Sample OrthoFinder command:
+
+```
+
+
 
 ### SHOOT
 
