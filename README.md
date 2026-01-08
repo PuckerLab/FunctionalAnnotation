@@ -135,7 +135,23 @@ If OrthoFinder and its dependencies were successfully installed, it will complet
 orthofinder -A mafft -T iqtree -f Sample_dir
 
 ```
+In the above command the mandatory parameter is only the '-f' flag that takes in a directory of FASTA files for all the species to be analyzed. Each FASTA file must contain protein sequences. The flags -A and -T have famsa and fasttree respectively as defaults. They have been tweaked in the above sample command to show that the command needs to be tailored according to specific-use-cases. For example, iqtree takes longer to run than fasttree, but can provide more accurate results. So, such considerations must be done before constructing a command for a tool run.
 
+**After completing the OrthoFinder run:**
+
+'''
+
+# deactivate the virtual environment
+
+deactivate
+
+# Reactivate the environment when you want to use the tool again
+
+. of3_env/bin/activate
+
+```
+
+**Official documentation:** https://github.com/OrthoFinder/OrthoFinder
 
 
 
