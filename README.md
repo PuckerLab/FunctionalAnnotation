@@ -160,7 +160,7 @@ cd /path/to/OrthoFinder
 **Official documentation:** https://github.com/OrthoFinder/OrthoFinder
 
 
-### SHOOT
+### 6. SHOOT
 
 SHOOT [https://doi.org/10.1186/s13059-022-02652-8] is a phylogenetic search engine. It is an alternative to BLAST and an orthogonal approach to finding orthologs. Instead of searching for orthologs using sequence similarity, SHOOT directly relies on phylogenetic signal. It takes the query protein sequence, and searches it against a database of phylogenetic trees. It then places the sequence or more correctly grafts the sequence onto its suitable phylogenetic tree and returns the results along with the orthologs found for the specific sequence. 
 
@@ -181,7 +181,7 @@ SHOOT [https://doi.org/10.1186/s13059-022-02652-8] is a phylogenetic search engi
 
 **Official documentation:** https://github.com/davidemms/SHOOT
 
-### FASTOMA
+### 7. FASTOMA
 FASTOMA [https://doi.org/10.1038/s41592-024-02552-8] is another ortholog finding tool that combines ultrafast homology grouping with taxonomy-based sampling. It is an advanced update of the OMA algorithm and adopts a highly efficient parallel computing approach. It can take in multiple proteomes of species and also helps infer hierarchical orthologous groups (HOGs). Apart from the protein FASTA file for each of the species, it needs species tree in Newick format for all the species used in a particular run. 
 
 **Installing pre-requisites:**
@@ -192,38 +192,38 @@ FASTOMA [https://doi.org/10.1038/s41592-024-02552-8] is another ortholog finding
   ```
   sudo apt install openjdk-17-jdk
   ```
-  - Next nextflow needs to be installed for FastOMA to work and the steps to install it are as follows:
+- Next nextflow needs to be installed for FastOMA to work and the steps to install it are as follows:
  
-  ```
-  # move to the desired destination folder
+```
+# move to the desired destination folder
 
-  cd /path/to/destination/folder
+cd /path/to/destination/folder
 
-  # download nextflow
+# download nextflow
     
-  curl -s https://get.nextflow.io | bash
+curl -s https://get.nextflow.io | bash
 
-  # make nextflow executable
+# make nextflow executable
 
-  chmod +x executable
+chmod +x executable
 
-  # If you are working on a UNIX-based system like Linux, update the bashrc file with the path of the destination folder containing the nextflow executable as follows:
+# If you are working on a UNIX-based system like Linux, update the bashrc file with the path of the destination folder containing the nextflow executable as follows:
 
-  nano ~/.bashrc
+nano ~/.bashrc
 
-  # add the following line at the end of the bashrc file
+# add the following line at the end of the bashrc file
 
-  export PATH=$PATH:/path/to/destination/folder
+export PATH=$PATH:/path/to/destination/folder
 
-  # press ctrl+x and then when prompted y
+# press ctrl+x and then when prompted y
 
-  # reload the bashrc file
+# reload the bashrc file
 
-  source ~/.bashrc
+source ~/.bashrc
 
-  ```
+```
 
-  ** FastOMA installation**
+**FastOMA installation**
 
   
 
