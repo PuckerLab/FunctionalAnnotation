@@ -15,6 +15,8 @@ Documentation: https://interproscan-docs.readthedocs.io/en/latest/
 
 InterPro [https://doi.org/10.1093/bioinformatics/btu031] is a database integrating predictive information about protein function from a number of partner resources like CATH, CDD, PANTHER, and Pfam to name a few. It is hosted and maintained by EMBL-EBI. InterProScan5 is a software for functional annotation of proteins. It is integrated with the InterPro database and can be installed locally. Step by step instructions for using the tool can be found at https://github.com/PuckerLab/PlantGenomicsGuide 
 
+**Official documentation:** 
+
 ### 2. Mercator4
 
 Mercator4 [https://doi.org/10.1007/978-1-0716-1609-3_9] [https://doi.org/10.1016/j.molp.2019.01.003] is an online tool for protein annotation of land plants and algae. It assigns protein functions in a hierarchical manner with each sub-node being more specific than the previous node and provides options to include Swiss-Prot annotations. The protein annotations can further be visualized as a tree structure or a heat map. After obtaining the functional annotation mapping file from Mercator4 it is also possible to do an enrichment analysis of genes of your interest using the database. Following is a step by step guide for using Mercator4:
@@ -447,7 +449,98 @@ conda deactivate
 
 ### Dali
 
+#### Dali server
+
+Dali is a popular webserver [https://doi.org/10.1093/nar/gkac387] used for finding protein homologs based on protein structure search against databases like the AlphaFoldDB and PDB. It offers three main options - (i) Comparing a query protein structure against the PDB, PDB25 or the AlphaFoldDB databases, (ii) Pairwise structure comparison amongst the user given list of protein structures that allows a maximum of 10 structures per job, (iii) All against all protein structure comparison amongst the user given list of prorein structures that allows a maximum of 64 structures per job. For all these options, the input needs to be the PDB identifier of the query protein(s) along with the chain identifier. PDB identifiers based on key word search can be accessed at http://www.rcsb.org/. The chain identifier denotes the chains in a protein structure and must be given along with the PDB identifier while submitting your job on the Dali server. While Dali is versatile, the web server is limited by the number of protein structures that can be analyzed concurrently. 
+
+#### DaliLite.v5 standalone software
+
+To overcome the input limitations of the Dali server, DaliLite.v5 [https://doi.org/10.1093/bioinformatics/btz536] a standalone software is available.
+
+**DaliLite.v5 installation:**
+
+```
+
+# move to your desired destination folder
+
+cd /path/to/folder
+
+# fetch the DaliLite tar file
+
+wget http://ekhidna2.biocenter.helsinki.fi/dali/DaliLite.v5.tar.gz
+
+# Decompress the tar ball
+
+tar -xvzf DaliLite.v5.tar.gz
+
+# move to the DaliLite bin folder
+
+cd /path/to/folder/DaliLite.v5/bin
+
+# compile the binaries
+
+make clean
+
+make
+
+```
+
+**Running Dali:**
+
+```
+
+- The DaliLite software needs the PDB file format to be converted into an internal format that DaliLite accepts. This is achieved with the import.pl script. The user's private protein file can be used when going for pairwise or all against all searches. But in case of database search, the public database structure fields must be mirrored and converted to the required format using import.pl script.
+
+# Import private protein structure files
+
+cd /path/to/folder/DaliLite.v5/bin
+
+./import.pl --pdbfile sample.pdb --pdbid samp --dat /path/to/DATA --clean
+
+In the above command the PDB ID must alway be of 4 letters as it is hard coded. --dat flag specifies the output folder for the reformatted file. All structures for a comparison must be provided in a single directory.
+
+# Import public database structure files 
+
+./import.pl --rsync --pdbmirrordir /path/to/folder/pdb --dat /path/to/folder/DATA --clean
+
+The PDB structures will be stored in the location specified to the --pdbmirrordir flag and the Dali formatted files will be stored in the path specified to the --dat flag.
+
+# Make a BLAST database for the structure based database search
+
+- BLAST is used to group together sequences that show sequence level similarity before the structural alignment step
+
+ The following commands can be used to extract sequences from the imported structures into a FASTA file:
+
+# Obtain a list of protein structures in the Dali format from the previous step(s)
+
+ls /path/to/folder/DATA | perl -pe 's/\.dat//' > pdb.list
+
+# Obtain FASTA sequences from the protein structure files
+
+./dat2fasta.pl /path/to/folder/DATA < pdb.list | awk -v RS=">" -v FS="\n" -v ORS="" ' { if ($2) print ">"$0 } ' > pdb.fasta
+
+# Create a BLAST database
+
+makeblastdb -in pdb.fasta -out /path/to/folder/pdb.blast -dbtype prot
+
+# Pairwise Dali alignment
+
+./dali.pl --query sample.list --db target.list
+
+# All-against-all Dali alignment
+
+./dali.pl --matrix --query sample.list
+
+# Database search
+
+./dali.pl --hierarchical --repset pdb25.list --query sample.list --db pdb.list
+
+```
+**Official documentation:** http://ekhidna2.biocenter.helsinki.fi/dali/README.v5.html
+
 ### Foldseek
+
+
 
 ## Expression analysis-based annotation tools
 
