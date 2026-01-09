@@ -577,7 +577,7 @@ cd /path/to/folder/foldseek
 
 ./foldseek
 
-
+```
 
 ## Expression analysis-based annotation tools
 
