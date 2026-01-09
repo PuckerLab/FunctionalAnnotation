@@ -279,7 +279,7 @@ The in_folder in the above command has the protein FASTA files inside a folder c
 
 ### JCVI/ MCScan
 
-JCVI is a versatile Python-based library. It offers a number of useful tools for analysing, wrangling genomic files, and for performing various aspects of genome annotation. It also facilitates comparative genomic studies across multiple genomes using tools like MCScan. MCScan is a specific utility of JCVI that is focussed on finding regions of synteny between genomes. Synteny is defined as conserved order of gene blocks between genomes. It helps obtain evolutionary insights about genomes and provides positional context in ortholog finding, making it more reliable. JCVI/ MCScan offers very good features to obtain the micro and macro-synteny plots and uses more sophisticated criteria and approach than BLAST for finding orthologs. 
+JCVI [https://doi.org/10.1002/imt2.211] is a versatile Python-based library. It offers a number of useful tools for analysing, wrangling genomic files, and for performing various aspects of genome annotation. It also facilitates comparative genomic studies across multiple genomes using tools like MCScan. MCScan is a specific utility of JCVI that is focussed on finding regions of synteny between genomes. Synteny is defined as conserved order of gene blocks between genomes. It helps obtain evolutionary insights about genomes and provides positional context in ortholog finding, making it more reliable. JCVI/ MCScan offers very good features to obtain the micro and macro-synteny plots and uses more sophisticated criteria and approach than BLAST for finding orthologs. 
 
 **JCVI installation:**
 
@@ -337,10 +337,70 @@ This step produces a dot plot in the PDF format and helps infer the genome-wide 
 
 # Macrosynteny visualization
 
+- Karyotype plots help visualize synteny between specified chromosomes of the genomes being compared.
+
+-First step for this is to produce a more concise form of the anchors file called the anchors.simple file
+
+# Make a succint version of the anchors file
+
+python -m jcvi.compara.synteny screen --minspan=30 --simple sampleA.sampleB.anchors sampleA.sampleB.anchors.new
+
+The parameter of the --minspan flag in the above command specifies the minimum number of genes spanning a synteny block for the block to be retained. This step produces a .anchors.simple file.
+
+- Next, two more input files need to be prepared - first the seqids file and then the layout file.
+
+- seqids file is a simple TXT file named seqids. It should have the chromosome identifiers of sampleA in first row and sampleB in second row, each separated by commas, as shown below
+
+chrA1,chrA2,chrA3,chrA4,chrA5
+chrB1,chrB2,chrB3,chrB4
+
+- layout file is a simple TXT design file named layout that specifies positional and style information of the plot. It is divided into two sections - the upper section and the lower section. The upper section has eight columns - y axis position, x axis start, x axis end, degree of rotation, colour (colour needs to be specified in hex code like #fc8d62), labels to be displayed, vertical alignment of the chromosomes per species, and the name of the BED file to be used. The lower section specifies the boundaries to draw the edges based on the information from the .anchors.simple file. A sample layout file (adopted from the official MCScan documentation) is shown below:
+
+# y, xstart, xend, rotation, color, label, va,  bed
+ .6,     .1,    .8,       0,      , sampleA, top, sampleA.bed
+ .4,     .1,    .8,       0,      , sampleB, top, sampleB.bed
+# edges
+e, 0, 1, sampleA.sampleB.anchors.simple
+
+# Plot the karyotype plot
+
+python -m jcvi.graphics.karyotype seqids layout
+
+# Microsynteny visualization
+
+- JCVI/ MCScan offers great flexibility and wide range of synteny visualization options. Microsynteny visualization helps view the local synteny at the gene level of your desired region in the genome.
+
+- After the pairwise synteny step, for a microsyteny visualization, a blocks file needs to be obtained.
+
+# Obtain blocks file for miscrosynteny
+
+python -m jcvi.compara.synteny mcscan sampleA.sampleB sampleA.sampleB.lifted.anchors --iter=1 -o sampleA.sampleB.i1.blocks
+
+In the above command, the parameter of the --iter flag specifies the number of best hits to be extracted per gene from the LAST results to make the blocks file and can be tweaked according to your use case.
+
+# Extract specific region of interest from the full blocks file
+
+Let's say you want to visualize the first 50 genes in the blocks file, then you need to extract this region into another blocks file that will be used for the visualization.
+
+head -50 sampleA.sampleB.i1.blocks > blocks
+
+# Prepare the blocks layout file
+
+The microsynteny visualization does not need the seqids file but it needs the TXT layout file similar to the one required for macrosynteny visualization. Let us name it blocks.layout, since this is the design file describing the synteny plot for the blocks file we extracted in the previous step. Everthing remains the same in this file like the macrosynteny lyout file except that, since no .anchors.simple file is not produced in microsynteny visualization, the lower section of the layout file does not have the name of the .anchors.simple file.
+
+# Get a microsynteny plot
+
+python -m jcvi.formats.bed merge sampleA.bed sampleB.bed -o sampleA_sampleB.bed
+
+python -m jcvi.graphics.synteny blocks sampleA_sampleB.bed blocks.layout
 
 # deactivate the conda environment after use
 
-conda deactivate                                                                                                                                          
+conda deactivate
+
+- More styling and customization options for the synteny plots can be obtained in the official documentation page of JCVI/ MCScan.
+```
+**Official documentation:** https://github.com/tanghaibao/jcvi/wiki/                                                                                                                                      
 
 ### TBtools-II
 
