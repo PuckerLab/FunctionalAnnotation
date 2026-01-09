@@ -225,8 +225,35 @@ source ~/.bashrc
 
 **FastOMA installation**
 
-  
+```
+# clone the FastOMA GitHub repository
 
+git clone https://github.com/DessimozLab/FastOMA.git
+
+# move into the FastOMA folder
+
+cd FastOMA
+
+# Make sure that docker is installed
+
+For docker installation instructions please refer the official docker installation guide https://docs.docker.com/engine/install/
+
+```
+**Running FastOMA:**
+```
+
+# Test run of FastOMA using the nextflow docker profile
+
+nextflow run FastOMA.nf -profile docker \
+    --container_version "sha-$(git rev-list --max-count=1 --abbrev-commit HEAD)" \
+    --input testdata/in_folder \
+    --output_folder /path/to/output/folder/sample_fastoma_test
+
+The in_folder in the above command has the protein FASTA files inside a folder called proteome. It also has the species tree file in the Newick format. Please note that the protein files must have the extension .fa
+
+```
+
+**Official documentation:** https://github.com/DessimozLab/FastOMA
 
 ## Sequence similarity based tools (aligners)
 
