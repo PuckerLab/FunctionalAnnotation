@@ -15,7 +15,7 @@ Documentation: https://interproscan-docs.readthedocs.io/en/latest/
 
 InterPro [https://doi.org/10.1093/bioinformatics/btu031] is a database integrating predictive information about protein function from a number of partner resources like CATH, CDD, PANTHER, and Pfam to name a few. It is hosted and maintained by EMBL-EBI. InterProScan5 is a software for functional annotation of proteins. It is integrated with the InterPro database and can be installed locally. Step by step instructions for using the tool can be found at https://github.com/PuckerLab/PlantGenomicsGuide 
 
-**Official documentation:** 
+**Official documentation:** https://interproscan-docs.readthedocs.io/en/v5/
 
 ### 2. Mercator4
 
@@ -38,6 +38,8 @@ Mercator4 [https://doi.org/10.1007/978-1-0716-1609-3_9] [https://doi.org/10.1016
     - Once you submit the job for the enrichmnet  analysis, you will get the results that can be downloaded as a TSV file
 ```
 
+**Official documentation:** https://www.plabipd.de/mercator_main.html
+
 ### 3. KEGG
 
 Kyoto Encyclopedia of Genes and Genomes (KEGG) [https://doi.org/10.1093/nar/gkae909] is a well-known database resource that helps in understanding biological functions of proteins from a molecular perspective. The annotation step using KEGG involves assigning KEGG Orthology (KO) identifiers to protein coding and RNA genes. The KEGG GENES dataset hosts a collection of genes and proteins from over 10000 complete genomes of cellular organisms and viruses and uses internal annotation tools like BlastKOALA, GhostKOALA, and KofamKOALA to assign the KO identifiers to obtain the functional orthologs. It integrates systemic, genomic, chemical and health information in the database and allows pathway mapping after the initial ortholog finding step using the assigned KO identifiers. This gives a better context-based information of the protein function in the organism and hence provides more cellular and organismal functional insights. KEGG can be used as follows for functional annotation of protein sequences:
@@ -58,6 +60,7 @@ Kyoto Encyclopedia of Genes and Genomes (KEGG) [https://doi.org/10.1093/nar/gkae
 - Upload the annotation results from the previous step into this tool and press exec. This file is a two column tab or space-separated file where the first column has the gene IDs of the query and the second column has the corresponding KO identifiers.
 
 ```
+**Official documentation:** https://www.genome.jp/kegg/
 
 ### 4. Blast2GO
 
@@ -453,6 +456,8 @@ conda deactivate
 
 Dali is a popular webserver [https://doi.org/10.1093/nar/gkac387] used for finding protein homologs based on protein structure search against databases like the AlphaFoldDB and PDB. It offers three main options - (i) Comparing a query protein structure against the PDB, PDB25 or the AlphaFoldDB databases, (ii) Pairwise structure comparison amongst the user given list of protein structures that allows a maximum of 10 structures per job, (iii) All against all protein structure comparison amongst the user given list of prorein structures that allows a maximum of 64 structures per job. For all these options, the input needs to be the PDB identifier of the query protein(s) along with the chain identifier. PDB identifiers based on key word search can be accessed at http://www.rcsb.org/. The chain identifier denotes the chains in a protein structure and must be given along with the PDB identifier while submitting your job on the Dali server. While Dali is versatile, the web server is limited by the number of protein structures that can be analyzed concurrently. 
 
+**Official documentation:** http://ekhidna2.biocenter.helsinki.fi/dali/DaliTutorial.pdf
+
 #### DaliLite.v5 standalone software
 
 To overcome the input limitations of the Dali server, DaliLite.v5 [https://doi.org/10.1093/bioinformatics/btz536] a standalone software is available.
@@ -489,7 +494,7 @@ make
 
 ```
 
-- The DaliLite software needs the PDB file format to be converted into an internal format that DaliLite accepts. This is achieved with the import.pl script. The user's private protein file can be used when going for pairwise or all against all searches. But in case of database search, the public database structure fields must be mirrored and converted to the required format using import.pl script.
+- The DaliLite software needs the PDB file format to be converted into an internal format that DaliLite accepts. This is achieved with the import.pl script. The user's private protein file can be used when going for pairwise or all against all searches. But in case of database search, the public database structure fields must be mirrored and converted to the required format using the import.pl script.
 
 # Import private protein structure files
 
@@ -539,6 +544,38 @@ makeblastdb -in pdb.fasta -out /path/to/folder/pdb.blast -dbtype prot
 **Official documentation:** http://ekhidna2.biocenter.helsinki.fi/dali/README.v5.html
 
 ### Foldseek
+
+Foldseek is a fast structural alignment tool that is available as a server as well as a standalone tool. It is capable of ultra-sensitive searches using protein sequences without the need for structure by leveraging language models. It relies on something called a 'structural alphabet' which is a descriptor of protein tertiary interactions and can be thought of as 3D interaction alphabet that can be used as a proxy for protein structural information while drastically reducing the computation times compared to the other protein structural alignment softwares.
+
+#### Foldseek server:
+
+Foldseek is available as a web server. It can be used to search a protein structure or FASTA sequence against the AlphaFoldDB and PDB in the order of seconds. Under the databases and search settings tab it provides options to select the databases to be searched against along with the mode that needs to be used for the structural alignment process. There is also an option to choose an iterative search process. Further, it offers more customization by providing option to choose the taxonomy class to filter the search to only those groups, helping optimize the computational time and the number of false positive results.
+
+**Official documentation:** https://search.foldseek.com/
+
+#### Foldseek standalone software
+
+Foldseek software can be used to analyze a large number of protein sequences or structures. 
+
+**Foldseek installation:**
+
+```
+
+# Create a conda environment in the folder of your choice
+
+conda create -p /path/to/folder/foldseek
+
+# Install foldseek with conda
+
+conda install -p /vol/data/tools/foldseek -c conda-forge -c bioconda foldseek
+
+# Move to the conda installed destination of foldseek
+
+cd /path/to/folder/foldseek
+
+# Test the installation
+
+./foldseek
 
 
 
