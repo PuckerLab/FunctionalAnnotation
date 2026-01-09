@@ -441,6 +441,7 @@ The parameter of the -c flag is 0.6 by default and can be adjusted according to 
 
 conda deactivate
 ```
+**Official documentation:** https://github.com/zhangrengang/SOI
 
 ## Protein structure-based annotation tools
 
