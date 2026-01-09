@@ -400,15 +400,47 @@ conda deactivate
 
 - More styling and customization options for the synteny plots can be obtained in the official documentation page of JCVI/ MCScan.
 ```
-**Official documentation:** https://github.com/tanghaibao/jcvi/wiki/                                                                                                                                      
-
-### TBtools-II
-
-### TOGA
-
-### Orthorefine
+**Official documentation:** https://github.com/tanghaibao/jcvi/wiki/                                                                                          
 
 ### SOI
+
+SOI is another Python-based toolkit that helps in finding syntenic orthologs. It employs a method called Orthology Index (OI) using which it infers the proportion of pre-inferred orthologs within a syntenic block. It needs synteny results and ortholog results as mandatory input files and filters out orthologs in the syntenic region with a default OI value of 0.6. It accepts synteny outputs from JCVI/ MCScan, MCScanX and WGDI and ortholog outputs from OrthoFinder, and OrthoMCL. Apart from providing the filtered syntenic orthologs as results, it can also be used for other evolutionary analyses like obtaining a dotplot and clustering the syntenic orthologs into syntenic orthogroups to name a few.
+
+**SOI Installation:**
+
+```
+
+# Create the conda environment in a folder of your choice and name it OrthoIndex
+
+conda create -p /path/to/folder/OrthoIndex
+
+# Install the SOI tool using conda
+
+conda install -p /path/to/folder/OrthoIndex -c conda-forge -c bioconda soi
+
+# Activate the conda environment
+
+conda activate /path/to/folder/OrthoIndex
+
+# Test SOI installation
+
+soi -h
+
+- The above command must display the usage instructions for SOI
+
+```
+
+**Running SOI:**
+
+```
+soi filter -s sample.collinearity.gz -o OrthoFinder/Sample_results -c 0.8 > sample.collinearity.ortho.results
+
+The parameter of the -c flag is 0.6 by default and can be adjusted according to the strictness level of orthologs needed.
+
+# Deactivate the conda environment
+
+conda deactivate
+```
 
 ## Protein structure-based annotation tools
 
