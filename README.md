@@ -129,7 +129,7 @@ If OrthoFinder and its dependencies were successfully installed, it will complet
 
 ```
 
-**Sample OrthoFinder command:**
+**Running OrthoFinder:**
 
 ```
 orthofinder -A mafft -T iqtree -f Sample_dir
@@ -278,6 +278,69 @@ The in_folder in the above command has the protein FASTA files inside a folder c
 ## Synteny analysis tools
 
 ### JCVI/ MCScan
+
+JCVI is a versatile Python-based library. It offers a number of useful tools for analysing, wrangling genomic files, and for performing various aspects of genome annotation. It also facilitates comparative genomic studies across multiple genomes using tools like MCScan. MCScan is a specific utility of JCVI that is focussed on finding regions of synteny between genomes. Synteny is defined as conserved order of gene blocks between genomes. It helps obtain evolutionary insights about genomes and provides positional context in ortholog finding, making it more reliable. JCVI/ MCScan offers very good features to obtain the micro and macro-synteny plots and uses more sophisticated criteria and approach than BLAST for finding orthologs. 
+
+**JCVI installation:**
+
+```
+# fetch JCVI toolkit from bioconda
+
+conda create -p /sample/destination/folder/jcvi jcvi -c bioconda -c conda-forge
+
+# activate the conda environment
+
+conda activate /sample/destination/folder/jcvi
+
+```
+
+**Preparing input files for JCVI/ MCScan:**
+
+- GFF files giving positional information and protein or coding sequence (CDS) FASTA files of the species to be analyzed for synteny are required for this analysis. We will take two example species - sampleA and sampleB as the species for analysing pairwise synteny in the example detailed below.
+
+```
+# convert the input GFF files to BED files
+
+python -m jcvi.formats.gff bed --type=mRNA --key=Name --primary_only sampleA.gff3.gz -o sampleA.bed
+python -m jcvi.formats.gff bed --type=mRNA --key=Name --primary_only sampleB.gff3.gz -o sampleB.bed
+
+The parameters for the --type and --key flags in the above command must be adjusted according to the fields in your specific GFF file. If your species has many isoforms, it is recommended to use the --primary_only flag that retains only the primary transcript per gene.
+
+# Reformat the input FASTA files
+
+python -m jcvi.formats.fasta format sampleA.cds.fa.gz sampleA.cds
+python -m jcvi.formats.fasta format sampleB.fa.gz sampleB.cds
+
+```
+
+**Synteny analysis with JCVI/ MCScan:**
+
+```
+# Perform the pairwise synteny search
+
+python -m jcvi.compara.catalog ortholog sampleA sampleB --no_strip_names
+
+- The --no_strip_names flag in the above command helps retain the original gene identifiers found in the input FASTA files in the MCScan output.
+
+- This step produces the LAST file and anchors file. The LAST file is very similar to the BLAST output file and the anchors file is a list of high quality synteny blocks. This anchors file cna be used in subsequent steps for visualizing synteny at macro and micro scales.
+
+```
+
+**Synteny visualization with JCVI/ MCScan:**
+
+```
+# Visualizing synteny between two genomes using a dot plot
+
+python -m jcvi.graphics.dotplot sampleA.sampleB.anchors
+
+This step produces a dot plot in the PDF format and helps infer the genome-wide synteny pattern between the genomes.
+
+# Macrosynteny visualization
+
+
+# deactivate the conda environment after use
+
+conda deactivate                                                                                                                                          
 
 ### TBtools-II
 
