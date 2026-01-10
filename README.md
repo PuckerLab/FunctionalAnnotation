@@ -699,7 +699,7 @@ python3 coexp_phylo.py --config sample_config.txt --out sample_results
 
 ### KIPEs
 
-Knowledge-based Identification of Pathway Enzymes (KIPEs) is a Python tool that helps in automatic annotation of genes involved in flavonoid biosynthesis. Given enough knowledge of another biosynthetic pathway like well-known gene players, the tool can be adopted for such pathways as well. For instance, the tool was recently extended for carotenoid biosynthesis. The tool has a very comprehensive list of bait sequences of flavonoid biosynthesis and carotenoid biosynthesis genes in a number of plants that is used for the ortholog search step. The script starts with a local alignment using BLAST to identify orthologs and then looks for sequence level properties of the protein sequences like conserved residues. Since an enzyme's catalytic functions are heavily dependent on these conserved residues, the tool in a way combines sequence similarity with functional cues of the enzyme to identify the correct ortholog. Along with this, it also offers an option to perform a global alignment of top candidates from local alignment and infer orthologs from a phylogenetic tree, combining multiple levels of evidence to determine orthologs. 
+Knowledge-based Identification of Pathway Enzymes (KIPEs) [https://doi.org/10.1371/journal.pone.0294342] is a Python tool that helps in automatic annotation of genes involved in flavonoid biosynthesis. Given enough knowledge of another biosynthetic pathway like well-known gene players, the tool can be adopted for such pathways as well. For instance, the tool was recently extended for carotenoid biosynthesis. The tool has a very comprehensive list of bait sequences of flavonoid biosynthesis and carotenoid biosynthesis genes in a number of plants that is used for the ortholog search step. The script starts with a local alignment using BLAST to identify orthologs and then looks for sequence level properties of the protein sequences like conserved residues. Since an enzyme's catalytic functions are heavily dependent on these conserved residues, the tool in a way combines sequence similarity with functional cues of the enzyme to identify the correct ortholog. Along with this, it also offers an option to perform a global alignment of top candidates from local alignment and infer orthologs from a phylogenetic tree, combining multiple levels of evidence to determine orthologs. 
 
 **KIPEs installation:**
 
@@ -737,8 +737,45 @@ python3 KIPEs3.py --baits /path/to/folder/KIPEs/flavonoid_baits.tar.gz --out /pa
 - In the above command, sample.pep.fasta is the FASTA file of your query proteins that are to be annotated using KIPEs. It is also possible to specify a folder of peptide FASTA files to be annotated instead of a single file using the --subjectdir flag.
 
 ```  
+**Official documentation:** https://github.com/bpucker/KIPEs
 
 ### DupyliCate
+
+DupyliCate [https://doi.org/10.1101/2025.10.10.681656 ] is a Python tool for mining and analyzing gene duplications. It is able to identify gene duplications in a large number of species and is scalable. It combines gene expression data and helps study the expression divergence of the identified gene duplicates. Apart from this, it also offers an option to perform comparative analyses with respect to a reference species. In case, this reference-based analysis is opted for, apart from intra-species gene duplications, the tool also outputs orthologs across the species with respecto the reference species using a combination of local alignment, global alignment, synteny and phylogeny approaches. 
+
+**DupyliCate installation:**
+
+```
+
+# docker installation
+
+- For docker installation instructions please refer the official docker installation guide https://docs.docker.com/engine/install/
+
+# Pull the latest DupyliCate docker image from docker hub
+
+docker pull shakunthalan/dupylicate:latest
+
+# Test the DupyliCate image
+
+ docker run --rm -u $(id -u) -v /path/to/data:/data shakunthalan/dupylicate:latest
+
+- In the above command /path/to/data:/data must be replaced by your specific host and container paths.
+
+- The above command should display the DupyliCate usage indicating a successful pull of the docker image.
+
+```
+
+**Running DupyliCate:**
+
+```
+
+docker run --rm -u $(id -u) -v /path/to/data:/data shakunthalan/dupylicate:latest --gff path/to/folder/sample.gff --pep path/to/folder/sample.pep.fasta out /path/to/output/folder
+
+- The above command is a basic sample command for running DupyliCate. Options to integrate the expression analysis and the ortholog search can be found in the official documentation page. In the above command it is important to note that the names of the gff and pep  file without the extension should be the same. The --gff and --pep flags can also take in folders in which case the folder path must include the folder name and include  a / at the end of the full path.
+
+```
+
+**Official documentation:** https://github.com/ShakNat/DupyliCate
 
 ## References
 
