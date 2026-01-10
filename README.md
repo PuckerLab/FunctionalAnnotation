@@ -349,18 +349,77 @@ tar xzf diamond-linux64.tar.gz
 
 **Official documentation:** https://github.com/bbuchfink/diamond
 
-### 10. MMseqs2
+### 11. MAFFT
 
-MMseqs2 is yet another local alignment tool. It facilitattes many-against-many searching and matches the sensitivity of BLAST. But it is 400x computational efficient than BLAST. Like DIAMOND, it also offers clustering options for a set of similar sequences. With its sensiivity and speed, it can be applied on metagenomic and genomic datasets, and can also be used to search against the UniprotKB or the NCBI-NR databases.
+MAFFT [https://doi.org/10.1093/nar/gkf436] [https://doi.org/10.1093/molbev/mst010] is a popular alignment tool for multiple sequence alignment (MSA). Being based on a fast Fourier transform method, it is a fast tool forMSA. It offers a number of modes and algorithms for MSA that can be tweaked according to the objective in hand, and the nature of the sequences. MAFFT is availbale as an online server as well as a standalone tool, but the latter is recommended for its ability to process a large number of sequences.
 
-**MMseqs2 installation:**
+**MAFFT installation:**
 
 ```
 
+# Fetch the mafft Debian package
 
-### 11. MAFFT
+wget https://mafft.cbrc.jp/alignment/software/mafft_7.526-1_amd64.deb
 
-### MUSCLE5
+# Install the Debian package
+
+sudo dpkg -i mafft_7.526-1_amd64.deb
+
+```
+
+**Running MAFFT:**
+
+```
+mafft --globalpair --maxiterate 1000 --amino sample.fasta
+
+- The above sample command is based on the MAFFT G-INS-i method recommended when global alignment is needed using the Needleman-Wunsch algorithm.
+
+- Details about other MAFFT algorithms can be found in https://mafft.cbrc.jp/alignment/software/algorithms/algorithms.html
+
+- Tips for using the different MAFFT parameters and algorithms can be found in https://mafft.cbrc.jp/alignment/software/tips0.html
+
+```
+**MAFFT server and official documentation:** https://mafft.cbrc.jp/alignment/server/
+
+### 12. Muscle5
+
+Muscle5 [https://doi.org/10.1038/s41467-022-34630-w] is another orthogonal approach for multiple sequence alignment. Muscle5 is a major update of the original Muscle tool, and is more accurate, faster and much more scalable. It is reported to be approximately 20-30% more accurate than MAFFT. It is also available as an online server and a standalone software.
+
+**Muscle5 installation:**
+
+```
+# Move to the folder of your choice
+
+cd /path/to/folder
+
+# Fetch the MUSCLE5 executable
+
+wget https://github.com/rcedgar/muscle/releases/download/v5.3/muscle-linux-x86.v5.3
+
+# Enable execute permission
+
+chmod +x muscle-linux-x86.v5.3
+
+# For ease of use, rename the executable as muscle
+
+mv muscle-linux-x86.v5.3 muscle
+```
+
+**Running Muscle5:**
+```
+muscle -super5 sample.fa -output sample_aln.afa
+```
+
+**Muscle5 server:** https://www.ebi.ac.uk/jdispatcher/msa/muscle5
+
+**Official documentation:** https://www.drive5.com/muscle5/
+
+### 13. Algntrim.py
+
+After obtaining a multiple sequence alignment file, it is important to clean the file. This is because MSA columns can have a large number of gaps that turn into noise when the MSA file is used for a subsequnt phylogenetic analysis. This cleaning or trimming step helps decrease this noise, reduces computational costs of a phylogenetic tree building, and improves the signal from the sequences for phylogeny. Occupancy is the quantitative parameter used to determine the gaps present in a column. It is defined as the percentage of sequences in an aligned column that do not have gaps.
+
+
+
 
 ## Phylogeny and visualization tools
 
