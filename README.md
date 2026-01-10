@@ -431,7 +431,7 @@ python3 algntrim.py --in sample.aln --out sample_trimmed.aln
 
 **Application note:** The trimmed MSA file obtained from this step can be used for phylogenetic tree building in the next subsequent steps.
 
-## Phylogeny and visualization tools
+## Phylogeny analysis tools
 
 ### 14. IQ-TREE3
 
@@ -475,9 +475,34 @@ cd iqtree-3.0.1-Linux/bin
 
 **Official documentation:** https://iqtree.github.io/doc/Home#documentation
 
-### FastTree
+### 15. FastTree
 
-### iTOL
+FastTree [https://doi.org/10.1371/journal.pone.0009490], as the name suggests is a tree building tool that can take in alignments with millions of sequences and perform tree building with a reasonable amount of memory and time. It is computationally fast and can take in both protein and nucleotide sequences. The accuracy of the tool is slightly traded for its computational efficiency. Hence, it is important to understand the goal of the tool, its merits and apply it in appropriate use cases.
+
+**FastTree installation:**
+
+```
+# Move into a folder of your choice
+
+cd /path/to/folder
+
+# Fetch the FastTree executable
+
+wget http://www.microbesonline.org/fasttree/FastTree
+
+```
+
+**Running FastTree:**
+
+```
+./FastTree -nopr -wag sample_trimmed.aln > sample.nwk
+
+- The -nopr flag makes the program assume same evolutionary rate for all sites, reducing the computational time but compromising on the accuracy
+
+- The -wag is a model suited for protein sequences. FastTree offers other models as well that can be found by using the ./FastTree -h command
+```
+
+**Official documentation:** https://morgannprice.github.io/fasttree/
 
 ## Synteny analysis tools
 
