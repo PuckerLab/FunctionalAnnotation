@@ -262,7 +262,7 @@ The in_folder in the above command has the protein FASTA files inside a folder c
 
 ## Sequence similarity based tools (aligners)
 
-### BLAST
+### 8. BLAST
 
 Basic Local Alignment Search Tool (BLAST) [https://doi.org/10.1016/S0022-2836(05)80360-2] is a widely used alignment tool. It compares the query sequences against a database of target sequences and can take in both nucleotide and protein sequences. It performs local alignment, meaning, it looks for highly similar regions between sequences, and does not perform an end-to-end alignment of the sequences. BLAST is available as a server as well as a standalone software. The standalone software supports analysis of a large number of sequences and is recommended to be used. 
 
@@ -301,7 +301,7 @@ makeblastdb -in sampleA.pep.fasta -dbtype prot -parse_seqids -out sampleA_databa
 
 ```
 
-./blastp -query sampleB.pep.fasta -db sampleA_database -evalue 1e-5 -out sampleB.tsv -outfmt 6 -num_threads 10
+./blastp -query sampleB.pep.fasta -db sampleA_database -evalue 1e-5 -out sampleBA.tsv -outfmt 6 -num_threads 10
 
 - In the above command, the parameters for -evalue flag, the output format flag -outfmt and the -num_threads flag that takes in the number of cores for the analysis, can be tweaked based on the specific analysis at hand and the resources you have.
 
@@ -311,9 +311,43 @@ makeblastdb -in sampleA.pep.fasta -dbtype prot -parse_seqids -out sampleA_databa
 
 **Official documentation:** https://blast.ncbi.nlm.nih.gov/doc/blast-help/
 
-### DIAMOND
+### 9. DIAMOND
 
+DIAMOND [https://doi.org/10.1038/s41592-021-01101-x] is another aligner similar to BLAST. But it is 100x-10000x faster than BLAST. It facilitates both protein and translated DNA searches. It offers options to decide between the different levels of sensitivity, and thereby helps optimize the computational costs and accuracy. With its ability to cluster billions of proteins and low resource consumption, it is becoming a widely used tool both standalone, as well in integration with other bioinformatics tools and pipelines.
 
+**DIAMOND installation:**
+
+```
+# Move to the folder of your choice
+
+cd /path/to/folder
+
+# Fetch the latest DIAMOND tar ball
+
+wget http://github.com/bbuchfink/diamond/releases/download/v2.1.18/diamond-linux64.tar.gz
+
+# Decompress the tar ball
+
+tar xzf diamond-linux64.tar.gz
+```
+
+**Creating a DIAMOND database:**
+
+```
+./diamond makedb --in sampleA.fasta -d sampleA_database
+```
+
+**Running DIAMOND:**
+
+```
+./diamond blastp -d sampleA_database -q sampleB.fasta -o sampleBA.tsv
+
+- To know about the other executables in diamond, the help flag can be used like this below
+
+./diamond help
+```
+
+**Official documentation:** https://github.com/bbuchfink/diamond
 
 ### MMSeqs
 
