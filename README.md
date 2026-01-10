@@ -370,7 +370,7 @@ sudo dpkg -i mafft_7.526-1_amd64.deb
 **Running MAFFT:**
 
 ```
-mafft --globalpair --maxiterate 1000 --amino sample.fasta
+mafft --globalpair --maxiterate 1000 --amino sample.fasta > sample.aln
 
 - The above sample command is based on the MAFFT G-INS-i method recommended when global alignment is needed using the Needleman-Wunsch algorithm.
 
@@ -414,12 +414,22 @@ muscle -super5 sample.fa -output sample_aln.afa
 
 **Official documentation:** https://www.drive5.com/muscle5/
 
-### 13. Algntrim.py
+### 13. algntrim.py
 
-After obtaining a multiple sequence alignment file, it is important to clean the file. This is because MSA columns can have a large number of gaps that turn into noise when the MSA file is used for a subsequnt phylogenetic analysis. This cleaning or trimming step helps decrease this noise, reduces computational costs of a phylogenetic tree building, and improves the signal from the sequences for phylogeny. Occupancy is the quantitative parameter used to determine the gaps present in a column. It is defined as the percentage of sequences in an aligned column that do not have gaps.
+After obtaining a multiple sequence alignment file, it is important to clean the file. This is because MSA columns can have a large number of gaps that turn into noise when the MSA file is used for a subsequnt phylogenetic analysis. This cleaning or trimming step helps decrease this noise, reduces computational costs of a phylogenetic tree building, and improves the signal from the sequences for phylogeny. Occupancy is the quantitative parameter used to determine the gaps present in a column. It is defined as the percentage of sequences in an aligned column that do not have gaps. Although tools like pxclsq from PHYX are used for this trimming step, here we recommend using an in-house developed Python script algntrim.py for its ease of use.
 
+**Fetching and running algntrim.py:**
+```
+# Fetch the script from this GitHub repository in a folder of your choice
 
+wget https://raw.githubusercontent.com/PuckerLab/FunctionalAnnotation/refs/heads/main/algntrim.py
 
+# Run algntrim.py
+
+python3 algntrim.py --in sample.aln --out sample_trimmed.aln
+```
+
+**Application note:** The trimmed MSA file obtained from this step can be used for phylogenetic tree building in the next subsequent steps.
 
 ## Phylogeny and visualization tools
 
