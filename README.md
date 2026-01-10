@@ -264,7 +264,56 @@ The in_folder in the above command has the protein FASTA files inside a folder c
 
 ### BLAST
 
+Basic Local Alignment Search Tool (BLAST) [https://doi.org/10.1016/S0022-2836(05)80360-2] is a widely used alignment tool. It compares the query sequences against a database of target sequences and can take in both nucleotide and protein sequences. It performs local alignment, meaning, it looks for highly similar regions between sequences, and does not perform an end-to-end alignment of the sequences. BLAST is available as a server as well as a standalone software. The standalone software supports analysis of a large number of sequences and is recommended to be used. 
+
+**BLAST installation:**
+
+```
+
+# Move to the folder of your choice
+
+cd /path/to/folder
+
+# Fetch the latest BLAST tar ball
+
+wget https://ftp.ncbi.nlm.nih.gov/blast/executables/LATEST/ncbi-blast-2.17.0+-x64-linux.tar.gz
+
+# Decompress the tar ball
+
+tar -xzvf ncbi-blast-2.17.0+-x64-linux.tar.gz
+
+# Move to the bin folder of the BLAST installation
+
+cd ncbi-blast-2.17.0+/bin
+
+```
+
+**Making BLAST database:**
+
+```
+makeblastdb -in sampleA.pep.fasta -dbtype prot -parse_seqids -out sampleA_database
+
+- In the above command, a BLAST database is created from the sampleA's peptide FASTA file.
+
+```
+
+**Running BLAST:**
+
+```
+
+./blastp -query sampleB.pep.fasta -db sampleA_database -evalue 1e-5 -out sampleB.tsv -outfmt 6 -num_threads 10
+
+- In the above command, the parameters for -evalue flag, the output format flag -outfmt and the -num_threads flag that takes in the number of cores for the analysis, can be tweaked based on the specific analysis at hand and the resources you have.
+
+- There are also other available executables like blastx and blastn. More parameters of blastp and the other executables can be obtained by using the -h flag along with the specific executable's name.
+
+```
+
+**Official documentation:** https://blast.ncbi.nlm.nih.gov/doc/blast-help/
+
 ### DIAMOND
+
+
 
 ### MMSeqs
 
