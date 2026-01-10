@@ -545,7 +545,7 @@ makeblastdb -in pdb.fasta -out /path/to/folder/pdb.blast -dbtype prot
 
 ### Foldseek
 
-Foldseek is a fast structural alignment tool that is available as a server as well as a standalone tool. It is capable of ultra-sensitive searches using protein sequences without the need for structure by leveraging language models. It relies on something called a 'structural alphabet' which is a descriptor of protein tertiary interactions and can be thought of as 3D interaction alphabet that can be used as a proxy for protein structural information while drastically reducing the computation times compared to the other protein structural alignment softwares.
+Foldseek [https://doi.org/10.1038/s41587-023-01773-0] is a fast structural alignment tool that is available as a server as well as a standalone tool. It is capable of ultra-sensitive searches using protein sequences without the need for structure by leveraging language models. It relies on something called a 'structural alphabet' which is a descriptor of protein tertiary interactions and can be thought of as 3D interaction alphabet that can be used as a proxy for protein structural information while drastically reducing the computation times compared to the other protein structural alignment softwares.
 
 #### Foldseek server:
 
@@ -622,7 +622,7 @@ BiocManager::install("GENIE3")
 **Running GENIE3:**
 
 ```
-GENIE3 requires expression data file in the following format - the rows should correspond to genes and the columns should correspond to samples. It is important to note that normalized expression data needs to be loaded for the GENEIE3 analysis.
+GENIE3 [https://doi.org/10.1371/journal.pone.0012776] requires expression data file in the following format - the rows should correspond to genes and the columns should correspond to samples. It is important to note that normalized expression data needs to be loaded for the GENEIE3 analysis.
 
 # Load expression data file into R
 
