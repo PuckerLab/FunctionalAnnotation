@@ -433,7 +433,47 @@ python3 algntrim.py --in sample.aln --out sample_trimmed.aln
 
 ## Phylogeny and visualization tools
 
-### IQ-TREE3
+### 14. IQ-TREE3
+
+IQ-TREE3 [https://ecoevorxiv.org/repository/view/8916/] is a well known phylogenetic tree building tool. It integrates ModelFinder, an algorithm for automatic selection of substitution model for the tree building, offering results with improved accuracy. Along with this, it offers a number of features like ultrafast bootstrap that performs bootstrapping comparatively faster than standard bootstrap without compromising the accuracy to a large extent. It also has options to perform topology testing of the phylogenetic tree using branch tests like SH-aLRT. Containing a wide variety of phylogenetic models, IQ-TREE3 is a highly recommended software for obtaining phylogenetic trees with good balance between accuracy and computtional times.
+
+**IQ-TREE3 installation:**
+
+```
+# Move to the folder of your choice
+
+cd /path/to/folder
+
+# Fetch the IQ-TREE3 tar ball
+
+wget https://github.com/iqtree/iqtree3/releases/download/v3.0.1/iqtree-3.0.1-Linux.tar.gz
+
+# Decompress the IQ-TREE3 tar ball
+
+tar -xvzf iqtree-3.0.1-Linux.tar.gz
+
+# Move into the bin folder of the IQ-TREE3 installation
+
+cd iqtree-3.0.1-Linux/bin
+```
+
+**Running IQTREE3:**
+
+```
+./iqtree3 -s sample_trimmed.aln -m MFP -wsr --alrt 1000 -B 1000 -pre /path/to/folder/sample -T 30
+
+- The different parameters in the above command are explained below:
+
+    m - MFP -> ModelFinder Plus (https://iqtree.github.io/doc/Substitution-Models)
+    wsr -> write site rates
+    alrt -> number of bootstrap replicates for SH-alrt test
+    Shimodaira-Hasegawa approximate Likelihood Ratio Test -> how confident should you be about each branch in your tree
+    B -> Ultrafast bootstrap
+    pre -> full path to output folder with the name of your treefile
+    T -> Number of cores for the phylogeny analysis
+```
+
+**Official documentation:** https://iqtree.github.io/doc/Home#documentation
 
 ### FastTree
 
