@@ -659,7 +659,7 @@ weightMat <- GENIE3(expr_data, regulators=regulators)
 
 ### CoExpPhylo
 
-CoExpPhylo [https://doi.org/10.1186/s12864-025-12061-3] is a Python script that combines coexpression analysis and phylogeny for robust ortholog identification. It can be used to identify genes involved in biosynthetic pathways across a number of species. It requires bait sequences of genes known to be involved in the specific pathway of interest for facilitating the phylogeny analysis. It also provides options to upload the phylogenetic trees obtained in the analysis and view them directly on iTOL viewer. 
+CoExpPhylo [https://doi.org/10.1186/s12864-025-12061-3] is a Python script that combines coexpression analysis and phylogeny for robust ortholog identification. It can be used to identify genes involved in biosynthetic pathways across a number of species. It requires bait sequences of genes known to be involved in the specific pathway of interest for facilitating the phylogeny analysis. It also provides options to upload the phylogenetic trees obtained in the analysis and view them directly on iTOL phylogenetic tree viewer. 
 
 **CoExpPhylo installation:**
 ```
@@ -698,6 +698,45 @@ python3 coexp_phylo.py --config sample_config.txt --out sample_results
 **Official documentation:** https://github.com/bpucker/CoExpPhylo
 
 ### KIPEs
+
+Knowledge-based Identification of Pathway Enzymes (KIPEs) is a Python tool that helps in automatic annotation of genes involved in flavonoid biosynthesis. Given enough knowledge of another biosynthetic pathway like well-known gene players, the tool can be adopted for such pathways as well. For instance, the tool was recently extended for carotenoid biosynthesis. The tool has a very comprehensive list of bait sequences of flavonoid biosynthesis and carotenoid biosynthesis genes in a number of plants that is used for the ortholog search step. The script starts with a local alignment using BLAST to identify orthologs and then looks for sequence level properties of the protein sequences like conserved residues. Since an enzyme's catalytic functions are heavily dependent on these conserved residues, the tool in a way combines sequence similarity with functional cues of the enzyme to identify the correct ortholog. Along with this, it also offers an option to perform a global alignment of top candidates from local alignment and infer orthologs from a phylogenetic tree, combining multiple levels of evidence to determine orthologs. 
+
+**KIPEs installation:**
+
+```
+# Installing dependencies
+
+- The tool needs dendropy, BLAST, MAFFT as mandatory depedencies and FastTree as optional dependencies. The installation instructions for BLAST and MAFFT can be found in the aligners section above and those for FastTree can be found in the phylogenetic analysis section above. dendropy can be installed as follows:
+
+# Install the pip package manager
+
+sudo apt install python3-pip
+
+# Install dendropy using pip
+
+python3 -m pip install git+https://github.com/jeetsukumaran/DendroPy.git
+
+# Clone the KIPEs GitHub repository in a folder of your choice
+
+git clone https://github.com/bpucker/KIPEs
+
+# Move into the KIPEs folder
+
+cd /path/to/folder/KIPEs
+
+- In the above folder you will find the KIPEs3.py script, the flavonoid_baits.tar.gz which is the baits file for flavonoid biosynthesis genes and the carotenoid_baits.tar.gz which is the baits file for carotenoid biosynthesis genes.
+
+```
+
+**Running KIPEs:**
+
+```
+
+python3 KIPEs3.py --baits /path/to/folder/KIPEs/flavonoid_baits.tar.gz --out /path/to/output/folder --subject /path/to/sample.pep.fasta
+
+- In the above command, sample.pep.fasta is the FASTA file of your query proteins that are to be annotated using KIPEs. It is also possible to specify a folder of peptide FASTA files to be annotated instead of a single file using the --subjectdir flag.
+
+```  
 
 ### DupyliCate
 
