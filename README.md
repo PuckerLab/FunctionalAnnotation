@@ -349,9 +349,16 @@ tar xzf diamond-linux64.tar.gz
 
 **Official documentation:** https://github.com/bbuchfink/diamond
 
-### MMSeqs
+### 10. MMseqs2
 
-### MAFFT
+MMseqs2 is yet another local alignment tool. It facilitattes many-against-many searching and matches the sensitivity of BLAST. But it is 400x computational efficient than BLAST. Like DIAMOND, it also offers clustering options for a set of similar sequences. With its sensiivity and speed, it can be applied on metagenomic and genomic datasets, and can also be used to search against the UniprotKB or the NCBI-NR databases.
+
+**MMseqs2 installation:**
+
+```
+
+
+### 11. MAFFT
 
 ### MUSCLE5
 
