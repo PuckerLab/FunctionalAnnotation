@@ -569,15 +569,35 @@ conda create -p /path/to/folder/foldseek
 
 conda install -p /vol/data/tools/foldseek -c conda-forge -c bioconda foldseek
 
-# Move to the conda installed destination of foldseek
+# Move to the bin folder of foldseek
 
-cd /path/to/folder/foldseek
+cd /path/to/folder/foldseek/bin
 
 # Test the installation
 
 ./foldseek
 
+This should display the usage instructions for running foldseek
+
 ```
+
+**Running foldseek:**
+
+```
+- There are a number of options available in foldseek starting with structural search of simple and complex proteins, clustering, and database creation to name a few. Here we will look at sample commands for structural search of proteins in the light of their relevance to functional annotation.
+
+foldseek easy-search /path/to/query/structure/sample /path/to/target/structures/database aln /path/to/tmp
+
+The easy-search command above is a part of the easy workflows of foldseek. It enables structural search of simple single chain protein structure files or FASTA files against a target database. sample_aln represents the resulting srtuctural alignment file and tmp is the temporary folder for storing intermediate files during the run.
+
+foldseek search sampleDB targetDB resultDB tmp
+
+The above search command is a part of the main workflows of foldseek. It enables searching a database of protein structures against another target database and also provides options for sensitive search and clustering with additional parameters. In the above command, sampleDB represents the sample database, targetDB represents the target database, and resultDB represents the result database of the run with temporary files being stored in the tmp folder.
+
+```
+Official documentation: https://github.com/steineggerlab/foldseek
+
+Official video tutorial: https://www.youtube.com/watch?v=k5Rbi22TtOA
 
 ## Expression analysis-based annotation tools
 
