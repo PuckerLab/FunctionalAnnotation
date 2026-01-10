@@ -659,6 +659,44 @@ weightMat <- GENIE3(expr_data, regulators=regulators)
 
 ### CoExpPhylo
 
+CoExpPhylo is a Python script that combines coexpression analysis and phylogeny for robust ortholog identification. It can be used to identify genes involved in biosynthetic pathways across a number of species. It requires bait sequences of genes known to be involved in the specific pathway of interest for facilitating the phylogeny analysis. It also provides options to upload the phylogenetic trees obtained in the analysis and view them directly on iTOL viewer. 
+
+**CoExpPhylo installation:**
+```
+# Clone the GitHub repository in a folder of your choice
+
+git clone https://github.com/bpucker/CoExpPhylo.git
+
+# Move into the CoexpPhylo folder
+
+cd CoExpPhylo
+
+# Create the conda environment
+
+conda env create -f environment.yml
+
+# Activate the conda environment
+
+conda activate env_CoExpPhylo
+```
+
+**Running CoExpPhylo:**
+
+```
+python3 coexp_phylo.py --config sample_config.txt --out sample_results
+
+- The config file is a simple TXT file that needs four mandatory columns separated by commas and an optional fifth column.
+
+- The four mandatory columns to be specified in order are name of the species to be analyzed, full path to the expression file of the species, full path to the coding sequence FASTA file of the species, full path to the baits file that has the gene identifiers of the bait sequences.
+
+- The full path to be specified must also have the name of the respective file.
+
+- The fifth optional column is full path to the peptide FASTA file of the species.
+
+```
+
+**Official documentation:** https://github.com/bpucker/CoExpPhylo
+
 ### KIPEs
 
 ### DupyliCate
