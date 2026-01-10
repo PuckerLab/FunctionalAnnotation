@@ -659,7 +659,7 @@ weightMat <- GENIE3(expr_data, regulators=regulators)
 
 ### CoExpPhylo
 
-CoExpPhylo is a Python script that combines coexpression analysis and phylogeny for robust ortholog identification. It can be used to identify genes involved in biosynthetic pathways across a number of species. It requires bait sequences of genes known to be involved in the specific pathway of interest for facilitating the phylogeny analysis. It also provides options to upload the phylogenetic trees obtained in the analysis and view them directly on iTOL viewer. 
+CoExpPhylo [https://doi.org/10.1186/s12864-025-12061-3] is a Python script that combines coexpression analysis and phylogeny for robust ortholog identification. It can be used to identify genes involved in biosynthetic pathways across a number of species. It requires bait sequences of genes known to be involved in the specific pathway of interest for facilitating the phylogeny analysis. It also provides options to upload the phylogenetic trees obtained in the analysis and view them directly on iTOL viewer. 
 
 **CoExpPhylo installation:**
 ```
