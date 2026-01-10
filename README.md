@@ -7,7 +7,7 @@
 Many tools are available for various tasks in plant genomics. Finding the right tool for a certain purpose can be challenging. This repository provides an overview of recommended tools specifically for functional annotation in plant genomics. This documentation is a guide elucidating step-by-step usage of some widely used functional annotation tools in plant genomics. It is important to note that the installation method outlined for each of the tools is based on the ease-of-installation for users of all levels, and the possibility of errors and bugs that can be encountered while doing so. Hence, the installation method detailed can differ from the officially recommended installation methods in the respective tools' documentation pages. Further, the tools covered range from user-friendly databases to advanced command-line tools. This will be of use to biologists interested in functional annotation of genes of interest in their own research. Each of the commands and usage instructions here are based on an example file named 'sample' and need to adapted based on the user's own use-case. If the user is not familiar with linux environment and packages for software installation, it is first recommended to read these relevant guidelines specified in https://github.com/PuckerLab/PlantGenomicsGuide. 
 
 
-## Functional annotation database tools
+## I. Functional annotation database tools
 
 ### 1. InterProScan5
 
@@ -87,7 +87,7 @@ Blast2GO [https://doi.org/10.1155/2008/619832] is a user-friendly application fo
 
 ```
 
-## Ortholog finding tools
+## II. Ortholog finding tools
 
 ### 5. OrthoFinder
 
@@ -260,7 +260,7 @@ The in_folder in the above command has the protein FASTA files inside a folder c
 
 **Official documentation:** https://github.com/DessimozLab/FastOMA
 
-## Sequence similarity based tools (aligners)
+## III. Sequence similarity based tools (aligners)
 
 ### 8. BLAST
 
@@ -431,7 +431,7 @@ python3 algntrim.py --in sample.aln --out sample_trimmed.aln
 
 **Application note:** The trimmed MSA file obtained from this step can be used for phylogenetic tree building in the next subsequent steps.
 
-## Phylogeny analysis tools
+## IV. Phylogeny analysis tools
 
 ### 14. IQ-TREE3
 
@@ -504,9 +504,9 @@ wget http://www.microbesonline.org/fasttree/FastTree
 
 **Official documentation:** https://morgannprice.github.io/fasttree/
 
-## Synteny analysis tools
+## V. Synteny analysis tools
 
-### JCVI/ MCScan
+### 16. JCVI/ MCScan
 
 JCVI [https://doi.org/10.1002/imt2.211] is a versatile Python-based library. It offers a number of useful tools for analysing, wrangling genomic files, and for performing various aspects of genome annotation. It also facilitates comparative genomic studies across multiple genomes using tools like MCScan. MCScan is a specific utility of JCVI that is focussed on finding regions of synteny between genomes. Synteny is defined as conserved order of gene blocks between genomes. It helps obtain evolutionary insights about genomes and provides positional context in ortholog finding, making it more reliable. JCVI/ MCScan offers very good features to obtain the micro and macro-synteny plots and uses more sophisticated criteria and approach than BLAST for finding orthologs. 
 
@@ -631,7 +631,7 @@ conda deactivate
 ```
 **Official documentation:** https://github.com/tanghaibao/jcvi/wiki/                                                                                          
 
-### SOI
+### 17. SOI
 
 SOI is another Python-based toolkit that helps in finding syntenic orthologs. It employs a method called Orthology Index (OI) using which it infers the proportion of pre-inferred orthologs within a syntenic block. It needs synteny results and ortholog results as mandatory input files and filters out orthologs in the syntenic region with a default OI value of 0.6. It accepts synteny outputs from JCVI/ MCScan, MCScanX and WGDI and ortholog outputs from OrthoFinder, and OrthoMCL. Apart from providing the filtered syntenic orthologs as results, it can also be used for other evolutionary analyses like obtaining a dotplot and clustering the syntenic orthologs into syntenic orthogroups to name a few.
 
@@ -672,9 +672,9 @@ conda deactivate
 ```
 **Official documentation:** https://github.com/zhangrengang/SOI
 
-## Protein structure-based annotation tools
+## VI. Protein structure-based annotation tools
 
-### Dali
+### 18. Dali
 
 #### Dali server
 
@@ -767,7 +767,7 @@ makeblastdb -in pdb.fasta -out /path/to/folder/pdb.blast -dbtype prot
 ```
 **Official documentation:** http://ekhidna2.biocenter.helsinki.fi/dali/README.v5.html
 
-### Foldseek
+### 19. Foldseek
 
 Foldseek [https://doi.org/10.1038/s41587-023-01773-0] is a fast structural alignment tool that is available as a server as well as a standalone tool. It is capable of ultra-sensitive searches using protein sequences without the need for structure by leveraging language models. It relies on something called a 'structural alphabet' which is a descriptor of protein tertiary interactions and can be thought of as 3D interaction alphabet that can be used as a proxy for protein structural information while drastically reducing the computation times compared to the other protein structural alignment softwares.
 
@@ -823,9 +823,9 @@ Official documentation: https://github.com/steineggerlab/foldseek
 
 Official video tutorial: https://www.youtube.com/watch?v=k5Rbi22TtOA
 
-## Expression analysis-based annotation tools
+## VII. Expression analysis-based annotation tools
 
-### GENIE3
+### 20. GENIE3
 
 GENIE3 is an R package that performs gene regulatory network analysis from expression data. It is based on machine learning and uses tree-based ensemble methods like Random Forests for the coexpression analysis. It is available as Python, Matlab and R-based (R/C) implementations. However, the R/C implementation is stated as the fastest GENIE3 implementation by the developers. Hence the installation and usage instructions given below are for this R/C implementation of GENIE3. This requires R to be installed priorly. https://cran.r-project.org/ provides detailed steps on R installation for the different operating systems.
 
@@ -879,9 +879,9 @@ weightMat <- GENIE3(expr_data, regulators=regulators)
 ```
 **Official documentation:** https://bioconductor.org/packages/release/bioc/html/GENIE3.html
 
-## Annotation tools employing combined approaches
+## VIII. Annotation tools employing combined approaches
 
-### CoExpPhylo
+### 21. CoExpPhylo
 
 CoExpPhylo [https://doi.org/10.1186/s12864-025-12061-3] is a Python script that combines coexpression analysis and phylogeny for robust ortholog identification. It can be used to identify genes involved in biosynthetic pathways across a number of species. It requires bait sequences of genes known to be involved in the specific pathway of interest for facilitating the phylogeny analysis. It also provides options to upload the phylogenetic trees obtained in the analysis and view them directly on iTOL phylogenetic tree viewer. 
 
@@ -921,7 +921,7 @@ python3 coexp_phylo.py --config sample_config.txt --out sample_results
 
 **Official documentation:** https://github.com/bpucker/CoExpPhylo
 
-### KIPEs
+### 22. KIPEs
 
 Knowledge-based Identification of Pathway Enzymes (KIPEs) [https://doi.org/10.1371/journal.pone.0294342] is a Python tool that helps in automatic annotation of genes involved in flavonoid biosynthesis. Given enough knowledge of another biosynthetic pathway like well-known gene players, the tool can be adopted for such pathways as well. For instance, the tool was recently extended for carotenoid biosynthesis. The tool has a very comprehensive list of bait sequences of flavonoid biosynthesis and carotenoid biosynthesis genes in a number of plants that is used for the ortholog search step. The script starts with a local alignment using BLAST to identify orthologs and then looks for sequence level properties of the protein sequences like conserved residues. Since an enzyme's catalytic functions are heavily dependent on these conserved residues, the tool in a way combines sequence similarity with functional cues of the enzyme to identify the correct ortholog. Along with this, it also offers an option to perform a global alignment of top candidates from local alignment and infer orthologs from a phylogenetic tree, combining multiple levels of evidence to determine orthologs. 
 
@@ -963,7 +963,7 @@ python3 KIPEs3.py --baits /path/to/folder/KIPEs/flavonoid_baits.tar.gz --out /pa
 ```  
 **Official documentation:** https://github.com/bpucker/KIPEs
 
-### DupyliCate
+### 23. DupyliCate
 
 DupyliCate [https://doi.org/10.1101/2025.10.10.681656 ] is a Python tool for mining and analyzing gene duplications. It is able to identify gene duplications in a large number of species and is scalable. It combines gene expression data and helps study the expression divergence of the identified gene duplicates. Apart from this, it also offers an option to perform comparative analyses with respect to a reference species. In case, this reference-based analysis is opted for, apart from intra-species gene duplications, the tool also outputs orthologs across the species with respecto the reference species using a combination of local alignment, global alignment, synteny and phylogeny approaches. 
 
