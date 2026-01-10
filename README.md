@@ -603,7 +603,57 @@ Official video tutorial: https://www.youtube.com/watch?v=k5Rbi22TtOA
 
 ### GENIE3
 
-### WGCNA
+GENIE3 is an R package that performs gene regulatory network analysis from expression data. It is based on machine learning and uses tree-based ensemble methods like Random Forests for the coexpression analysis. It is available as Python, Matlab and R-based (R/C) implementations. However, the R/C implementation is stated as the fastest GENIE3 implementation by the developers. Hence the installation and usage instructions given below are for this R/C implementation of GENIE3. This requires R to be installed priorly. https://cran.r-project.org/ provides detailed steps on R installation for the different operating systems.
+
+**GENIE3 installation:**
+```
+# The installation must be done in R
+
+#Install BiocManager for Bioconductor packages
+
+if (!require("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+# Install GENIE3 from Bioconductor
+BiocManager::install("GENIE3")
+
+```
+
+**Running GENIE3:**
+
+```
+GENIE3 requires expression data file in the following format - the rows should correspond to genes and the columns should correspond to samples. It is important to note that normalized expression data needs to be loaded for the GENEIE3 analysis.
+
+# Load expression data file into R
+
+expr_data <- read.table("sample_counts.tsv", header =TRUE, row.names = 1)
+
+# Load the GENIE3 library into R
+
+library(GENIE3)
+
+# Set a fixed seed value to ensure reproducibility of results
+
+set.seed(42)
+
+# Obtain the weight matrix from GENIE3
+
+weightMat <- GENIE3(expr_data)
+
+- The weight matrix has the genes in rows and columns and specifies the correlation weight between a gene pair. The greater the weight between a gene pair, stronger is the regulatory link between them.
+
+- By default all genes in your analysis are taken as regulatory candidates. In case you know apriori about which genes are transcription factors, that subset of genes can be specified as regulators.
+
+# Specify a subset of regulator genes
+
+regulators <- c("geneA", "geneB")
+
+# GENIE3 analysis based on the new set of regulators
+
+weightMat <- GENIE3(expr_data, regulators=regulators)
+
+```
+**Official documentation:** https://bioconductor.org/packages/release/bioc/html/GENIE3.html
 
 ## Annotation tools employing combined approaches
 
