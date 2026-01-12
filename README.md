@@ -27,15 +27,19 @@ Mercator4 [https://doi.org/10.1007/978-1-0716-1609-3_9] [https://doi.org/10.1016
 
 - Assess the correctness of FASTA file by uploading it to the Mercator4 FASTA validator.
 
-- Upload the file in the protein annotation section of the database and submit the job. It is advisable to provide your email ID for long-running jobs.
+- Upload the file in the protein annotation section of the database and submit the job.
+  It is advisable to provide your email ID for long-running jobs.
 
-- In case you have a list of genes of interest (GOI) say, differentially expressed genes for example, you could opt for the enrichment analysis as follows:
+- In case you have a list of genes of interest (GOI) say, differentially expressed genes for example,
+  you could opt for the enrichment analysis as follows:
 
     - Upload the Mercator4 mapping file.
     - Here you can specify the list of your GOIs and background genes' list.
-    - Make sure that the gene IDs you specify in this step and the gene IDs in the Mercator annotation mapping file are the same.
+    - Make sure that the gene IDs you specify in this step and the gene IDs in
+      the Mercator annotation mapping file are the same.
     - You can choose to perform either over-representation or under-representation analysis or both
-    - Once you submit the job for the enrichmnet  analysis, you will get the results that can be downloaded as a TSV file
+    - Once you submit the job for the enrichmnet  analysis, you will get the results
+      that can be downloaded as a TSV file
 ```
 
 **Official documentation:** https://www.plabipd.de/mercator_main.html
