@@ -672,7 +672,8 @@ python -m jcvi.graphics.synteny blocks sampleA_sampleB.bed blocks.layout
 
 conda deactivate
 
-- More styling and customization options for the synteny plots can be obtained in the official documentation page of JCVI/ MCScan.
+- More styling and customization options for the synteny plots can be obtained in the
+  official documentation page of JCVI/ MCScan.
 ```
 **Official documentation:** https://github.com/tanghaibao/jcvi/wiki/                                                                                          
 
@@ -1024,7 +1025,8 @@ cd /path/to/folder/KIPEs
 
 ```
 
-python3 KIPEs3.py --baits /path/to/folder/KIPEs/flavonoid_baits.tar.gz --out /path/to/output/folder --subject /path/to/sample.pep.fasta
+python3 KIPEs3.py --baits /path/to/folder/KIPEs/flavonoid_baits.tar.gz \
+--out /path/to/output/folder --subject /path/to/sample.pep.fasta
 
 - In the above command, sample.pep.fasta is the FASTA file of your query proteins that are to be
   annotated using KIPEs. It is also possible to specify a folder of peptide FASTA files to be
@@ -1043,7 +1045,8 @@ DupyliCate [https://doi.org/10.1101/2025.10.10.681656 ] is a Python tool for min
 
 # docker installation
 
-- For docker installation instructions please refer the official docker installation guide https://docs.docker.com/engine/install/
+- For docker installation instructions please refer the official docker installation guide
+  https://docs.docker.com/engine/install/
 
 # Pull the latest DupyliCate docker image from docker hub
 
@@ -1063,7 +1066,10 @@ docker pull shakunthalan/dupylicate:latest
 
 ```
 
-docker run --rm -u $(id -u) -v /path/to/data:/data shakunthalan/dupylicate:latest --gff path/to/folder/sample.gff --pep path/to/folder/sample.pep.fasta out /path/to/output/folder
+docker run --rm -u $(id -u) -v /path/to/data:/data \
+shakunthalan/dupylicate:latest --gff /data/path/to/folder/sample.gff \
+--pep /data/path/to/folder/sample.pep.fasta --out /data/path/to/output/folder
+
 
 - The above command is a basic sample command for running DupyliCate. Options to integrate the expression
   analysis and the ortholog search can be found in the official documentation page. In the above command
