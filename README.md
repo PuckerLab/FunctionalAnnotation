@@ -1015,9 +1015,7 @@ git clone https://github.com/bpucker/KIPEs
 
 cd /path/to/folder/KIPEs
 
-- In the above folder you will find the KIPEs3.py script, the flavonoid_baits.tar.gz which is the
-  baits file for flavonoid biosynthesis genes and the carotenoid_baits.tar.gz which is the baits
-  file for carotenoid biosynthesis genes.
+- In the above folder you will find the KIPEs3.py script, and the baits folder needed for the analysis.
 
 ```
 
@@ -1025,7 +1023,7 @@ cd /path/to/folder/KIPEs
 
 ```
 
-python3 KIPEs3.py --baits /path/to/folder/KIPEs/flavonoid_baits.tar.gz \
+python3 KIPEs3.py --baits /path/to/folder/KIPEs/baits \
 --out /path/to/output/folder --subject /path/to/sample.pep.fasta
 
 - In the above command, sample.pep.fasta is the FASTA file of your query proteins that are to be
