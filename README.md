@@ -44,7 +44,7 @@ Mercator4 [[2](#ref2)] [[3](#ref3)] is an online tool for protein annotation of 
 
 ### 3. KEGG Automatic Annotation Server (KAAS)
 
-Kyoto Encyclopedia of Genes and Genomes (KEGG) [https://doi.org/10.1093/nar/gkae909] is a well-known database resource that helps in understanding biological functions of proteins from a molecular perspective. The annotation step using KEGG involves assigning KEGG Orthology (KO) identifiers to protein coding and RNA genes. The manually curated KEGG GENES dataBASE hosts a collection of genes and proteins from over 10000 complete genomes of cellular organisms and viruses. The KEGG Automatic Annotation Server (KAAS) [https://doi.org/10.1093/nar/gkm321] is a rapid web server that provides functional annotation of genes by assigning KO identifiers using BLAST or GHOST sequence similarity searches and bi-directional best hit information. It facilitates pathway mapping after the initial ortholog finding step using the assigned KO identifiers. This gives a better context-based information of the protein function in the organism and hence provides more cellular and organismal functional insights. KAAS can be used as follows for functional annotation of protein sequences:
+Kyoto Encyclopedia of Genes and Genomes (KEGG) [[4](#ref4)] is a well-known database resource that helps in understanding biological functions of proteins from a molecular perspective. The annotation step using KEGG involves assigning KEGG Orthology (KO) identifiers to protein coding and RNA genes. The manually curated KEGG GENES dataBASE hosts a collection of genes and proteins from over 10000 complete genomes of cellular organisms and viruses. The KEGG Automatic Annotation Server (KAAS) [[5](#ref5)] is a rapid web server that provides functional annotation of genes by assigning KO identifiers using BLAST or GHOST sequence similarity searches and bi-directional best hit information. It facilitates pathway mapping after the initial ortholog finding step using the assigned KO identifiers. This gives a better context-based information of the protein function in the organism and hence provides more cellular and organismal functional insights. KAAS can be used as follows for functional annotation of protein sequences:
 
 ```
 - Upload your FASTA file of protein sequences to one of the search programs BLAST, GHOSTX or GHOSTZ
@@ -65,7 +65,7 @@ Kyoto Encyclopedia of Genes and Genomes (KEGG) [https://doi.org/10.1093/nar/gkae
 
 ### 4. Blast2GO
 
-Blast2GO [https://doi.org/10.1155/2008/619832] is a user-friendly application for functional annotation. It is a suite of bioinformatics tools like BLAST and a number of databases like KEGG and InterProScan integrated with GO mapping and function assignment from these databases. It provides statistical summaries and nice features for visualization of the functional annotation results. However, only the basic version of the application is free for non-profit academic research purposes. The guideline below is a brief overview on using the basic version of Blast2GO for a simple functional annotation process.
+Blast2GO [[6](#ref6)] is a user-friendly application for functional annotation. It is a suite of bioinformatics tools like BLAST and a number of databases like KEGG and InterProScan integrated with GO mapping and function assignment from these databases. It provides statistical summaries and nice features for visualization of the functional annotation results. However, only the basic version of the application is free for non-profit academic research purposes. The guideline below is a brief overview on using the basic version of Blast2GO for a simple functional annotation process.
 
 ```
 - Register for the Blast2GO basic version at https://www.biobam.com/blast2go-basic/
@@ -96,7 +96,7 @@ Blast2GO [https://doi.org/10.1155/2008/619832] is a user-friendly application fo
 
 ### 5. OrthoFinder
 
-OrthoFinder [https://doi.org/10.1101/2025.07.15.664860] is a widely used tool for ortholog identification. It identifies orthologous genes, and clusters them into orthogroups. These orthogroups are further analyzed to obtain gene and species trees. Gene duplication events are also reported using both these trees. The method is scalable to a large number of genomes. It helps in large scale comparative genomics across species and provides detailed statistics and summary of the results. 
+OrthoFinder [[7](#ref7)]] is a widely used tool for ortholog identification. It identifies orthologous genes, and clusters them into orthogroups. These orthogroups are further analyzed to obtain gene and species trees. Gene duplication events are also reported using both these trees. The method is scalable to a large number of genomes. It helps in large scale comparative genomics across species and provides detailed statistics and summary of the results. 
 
 **Installation:**
 
@@ -173,7 +173,7 @@ cd /path/to/OrthoFinder
 
 ### 6. SHOOT
 
-SHOOT [https://doi.org/10.1186/s13059-022-02652-8] is a phylogenetic search engine. It is an alternative to BLAST and an orthogonal approach to finding orthologs. Instead of searching for orthologs using sequence similarity, SHOOT directly relies on phylogenetic signal. It takes the query protein sequence, and searches it against a database of phylogenetic trees. It then places the sequence or more correctly grafts the sequence onto its suitable phylogenetic tree and returns the results along with the orthologs found for the specific sequence. 
+SHOOT [[8](#ref8)] is a phylogenetic search engine. It is an alternative to BLAST and an orthogonal approach to finding orthologs. Instead of searching for orthologs using sequence similarity, SHOOT directly relies on phylogenetic signal. It takes the query protein sequence, and searches it against a database of phylogenetic trees. It then places the sequence or more correctly grafts the sequence onto its suitable phylogenetic tree and returns the results along with the orthologs found for the specific sequence. 
 
 **Using SHOOT:**
 
@@ -194,7 +194,7 @@ SHOOT [https://doi.org/10.1186/s13059-022-02652-8] is a phylogenetic search engi
 **Official documentation:** https://github.com/davidemms/SHOOT
 
 ### 7. FASTOMA
-FASTOMA [https://doi.org/10.1038/s41592-024-02552-8] is another ortholog finding tool that combines ultrafast homology grouping with taxonomy-based sampling. It is an advanced update of the OMA algorithm and adopts a highly efficient parallel computing approach. It can take in multiple proteomes of species and also helps infer hierarchical orthologous groups (HOGs). Apart from the protein FASTA file for each of the species, it needs species tree in Newick format for all the species used in a particular run. 
+FASTOMA [[9](#ref9)] is another ortholog finding tool that combines ultrafast homology grouping with taxonomy-based sampling. It is an advanced update of the OMA algorithm and adopts a highly efficient parallel computing approach. It can take in multiple proteomes of species and also helps infer hierarchical orthologous groups (HOGs). Apart from the protein FASTA file for each of the species, it needs species tree in Newick format for all the species used in a particular run. 
 
 **Installing pre-requisites:**
 
@@ -275,7 +275,7 @@ nextflow run FastOMA.nf -profile docker \
 
 ### 8. BLAST
 
-Basic Local Alignment Search Tool (BLAST) [https://doi.org/10.1016/S0022-2836(05)80360-2] is a widely used alignment tool. It compares the query sequences against a database of target sequences and can take in both nucleotide and protein sequences. It performs local alignment, meaning, it looks for highly similar regions between sequences, and does not perform an end-to-end alignment of the sequences. BLAST is available as a server as well as a standalone software. The standalone software supports analysis of a large number of sequences and is recommended to be used. 
+Basic Local Alignment Search Tool (BLAST) [[10](#ref10)] is a widely used alignment tool. It compares the query sequences against a database of target sequences and can take in both nucleotide and protein sequences. It performs local alignment, meaning, it looks for highly similar regions between sequences, and does not perform an end-to-end alignment of the sequences. BLAST is available as a server as well as a standalone software. The standalone software supports analysis of a large number of sequences and is recommended to be used. 
 
 **BLAST installation:**
 
@@ -324,7 +324,7 @@ makeblastdb -in sampleA.pep.fasta -dbtype prot -parse_seqids -out sampleA_databa
 
 ### 9. DIAMOND
 
-DIAMOND [https://doi.org/10.1038/s41592-021-01101-x] is another aligner similar to BLAST. But it is 100x-10000x faster than BLAST. It facilitates both protein and translated DNA searches. It offers options to decide between the different levels of sensitivity, and thereby helps optimize the computational costs and accuracy. With its ability to cluster billions of proteins and low resource consumption, it is becoming a widely used tool both standalone, as well in integration with other bioinformatics tools and pipelines.
+DIAMOND [[11](#ref11)] is another aligner similar to BLAST. But it is 100x-10000x faster than BLAST. It facilitates both protein and translated DNA searches. It offers options to decide between the different levels of sensitivity, and thereby helps optimize the computational costs and accuracy. With its ability to cluster billions of proteins and low resource consumption, it is becoming a widely used tool both standalone, as well in integration with other bioinformatics tools and pipelines.
 
 **DIAMOND installation:**
 
@@ -1081,6 +1081,30 @@ shakunthalan/dupylicate:latest --gff /data/path/to/folder/sample.gff \
 
 <a id="ref3"></a>
 [3] Bolger, M., Schwacke, R. & Usadel, B. MapManMapMan Visualization of RNA-Seq Data Using Mercator4Mercator4 Functional Annotations. in Solanum tuberosum: Methods and Protocols (eds. Dobnik, D., Gruden, K., Ramšak, Ž. & Coll, A.) 195–212 (Springer US, New York, NY, 2021). doi:10.1007/978-1-0716-1609-3_9.
+
+<a id="ref4"></a>
+[4] Kanehisa, M., Furumichi, M., Sato, Y., Matsuura, Y. & Ishiguro-Watanabe, M. KEGG: biological systems database as a model of the real world. Nucleic Acids Res 53, D672–D677 (2025).
+
+<a id="ref5"></a>
+[5] Moriya, Y., Itoh, M., Okuda, S., Yoshizawa, A. C. & Kanehisa, M. KAAS: an automatic genome annotation and pathway reconstruction server. Nucleic Acids Res 35, W182–W185 (2007).
+
+<a id="ref6"></a>
+[6] Conesa, A. & Götz, S. Blast2GO: A Comprehensive Suite for Functional Analysis in Plant Genomics. International Journal of Plant Genomics 2008, 619832 (2008).
+
+<a id="ref7"></a>
+[7] Emms, D. M., Liu, Y., Belcher, L., Holmes, J. & Kelly, S. OrthoFinder: scalable phylogenetic orthology inference for comparative genomics. 2025.07.15.664860 Preprint at https://doi.org/10.1101/2025.07.15.664860 (2025).
+
+<a id="ref8"></a>
+[8] Emms, D. M. & Kelly, S. SHOOT: phylogenetic gene search and ortholog inference. Genome Biol 23, 85 (2022).
+
+<a id="ref9"></a>
+[9] Majidian, S. et al. Orthology inference at scale with FastOMA. Nat Methods 22, 269–272 (2025).
+
+<a id="ref10"></a>
+[10] Altschul, S. F., Gish, W., Miller, W., Myers, E. W. & Lipman, D. J. Basic local alignment search tool. Journal of Molecular Biology 215, 403–410 (1990).
+
+<a id="ref11"></a>
+[11] Buchfink, B., Reuter, K. & Drost, H.-G. Sensitive protein alignments at tree-of-life scale using DIAMOND. Nat Methods 18, 366–368 (2021).
 
 
 
