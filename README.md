@@ -13,7 +13,7 @@ Many tools are available for various tasks in plant genomics. Finding the right 
 
 Documentation: https://interproscan-docs.readthedocs.io/en/latest/
 
-InterPro [1](#ref1) is a database integrating predictive information about protein function from a number of partner resources like CATH, CDD, PANTHER, and Pfam to name a few. It is hosted and maintained by EMBL-EBI. InterProScan5 is a software for functional annotation of proteins. It is integrated with the InterPro database and can be installed locally. Step by step instructions for using the tool can be found at https://github.com/PuckerLab/PlantGenomicsGuide 
+InterPro [[1](#ref1)] is a database integrating predictive information about protein function from a number of partner resources like CATH, CDD, PANTHER, and Pfam to name a few. It is hosted and maintained by EMBL-EBI. InterProScan5 is a software for functional annotation of proteins. It is integrated with the InterPro database and can be installed locally. Step by step instructions for using the tool can be found at https://github.com/PuckerLab/PlantGenomicsGuide 
 
 **Official documentation:** https://interproscan-docs.readthedocs.io/en/v5/
 
