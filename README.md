@@ -11,15 +11,13 @@ Many tools are available for various tasks in plant genomics. Finding the right 
 
 ### 1. InterProScan5
 
-Documentation: https://interproscan-docs.readthedocs.io/en/latest/
-
 InterPro [[1](#ref1)] is a database integrating predictive information about protein function from a number of partner resources like CATH, CDD, PANTHER, and Pfam to name a few. It is hosted and maintained by EMBL-EBI. InterProScan5 is a software for functional annotation of proteins. It is integrated with the InterPro database and can be installed locally. Step by step instructions for using the tool can be found at https://github.com/PuckerLab/PlantGenomicsGuide 
 
 **Official documentation:** https://interproscan-docs.readthedocs.io/en/v5/
 
 ### 2. Mercator4
 
-Mercator4 [https://doi.org/10.1007/978-1-0716-1609-3_9] [https://doi.org/10.1016/j.molp.2019.01.003] is an online tool for protein annotation of land plants and algae. It assigns protein functions in a hierarchical manner with each sub-node being more specific than the previous node and provides options to include Swiss-Prot annotations. The protein annotations can further be visualized as a tree structure or a heat map. After obtaining the functional annotation mapping file from Mercator4 it is also possible to do an enrichment analysis of genes of your interest using the database. Following is a step by step guide for using Mercator4:
+Mercator4 [[2](#ref2)] [(3)(#ref3)] is an online tool for protein annotation of land plants and algae. It assigns protein functions in a hierarchical manner with each sub-node being more specific than the previous node and provides options to include Swiss-Prot annotations. The protein annotations can further be visualized as a tree structure or a heat map. After obtaining the functional annotation mapping file from Mercator4 it is also possible to do an enrichment analysis of genes of your interest using the database. Following is a step by step guide for using Mercator4:
 
 ```
 
@@ -1077,6 +1075,14 @@ shakunthalan/dupylicate:latest --gff /data/path/to/folder/sample.gff \
 
 <a id="ref1"></a>
 [1] Jones, P. et al. InterProScan 5: genome-scale protein function classification. Bioinformatics 30, 1236–1240 (2014).
+
+<a id="ref2"></a>
+[2] Schwacke, R. et al. MapMan4: A Refined Protein Classification and Annotation Framework Applicable to Multi-Omics Data Analysis. Molecular Plant 12, 879–892 (2019).
+
+<a id="ref3"></a>
+[3] Bolger, M., Schwacke, R. & Usadel, B. MapManMapMan Visualization of RNA-Seq Data Using Mercator4Mercator4 Functional Annotations. in Solanum tuberosum: Methods and Protocols (eds. Dobnik, D., Gruden, K., Ramšak, Ž. & Coll, A.) 195–212 (Springer US, New York, NY, 2021). doi:10.1007/978-1-0716-1609-3_9.
+
+
 
 
 If you have questions about plant genomics that were not answered by any of these resources, please feel free to get in touch with the Plant Biotechnology and Biotechnology research group at the University of Bonn.
