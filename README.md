@@ -1147,4 +1147,4 @@ shakunthalan/dupylicate:latest --gff /data/path/to/folder/sample.gff \
 
 
 
-If you have questions about plant genomics that were not answered by any of these resources, please feel free to get in touch with the Plant Biotechnology and Biotechnology research group at the University of Bonn.
+**If you have questions about plant genomics that were not answered by any of these resources, please feel free to get in touch with the [Plant Biotechnology and Biotechnology](https://www.izmb.uni-bonn.de/en/pbb/contact) research group at the University of Bonn.**
