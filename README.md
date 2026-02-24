@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/1117633759.svg)](https://doi.org/10.5281/zenodo.18762038)
+
 # Functional Annotation Guide
 
 **Collection of command line protocols of functional annotation tools in plant genomics**
