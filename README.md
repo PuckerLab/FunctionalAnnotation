@@ -31,8 +31,8 @@ Mercator4 [[2](#ref2)] [[3](#ref3)] is an online tool for protein annotation of 
 - Upload the file in the protein annotation section of the database and submit the job.
   It is advisable to provide your email ID for long-running jobs.
 
-- In case you have a list of genes of interest (GOI) say, differentially expressed genes for example,
-  you could opt for the enrichment analysis as follows:
+- In case you have a list of genes of interest (GOI) say, differentially expressed genes for
+  example, you could opt for the enrichment analysis as follows:
 
     - Upload the Mercator4 mapping file.
     - Here you can specify the list of your GOIs and background genes' list.
@@ -50,14 +50,16 @@ Mercator4 [[2](#ref2)] [[3](#ref3)] is an online tool for protein annotation of 
 Kyoto Encyclopedia of Genes and Genomes (KEGG) [[4](#ref4)] is a well-known database resource that helps in understanding biological functions of proteins from a molecular perspective. The annotation step using KEGG involves assigning KEGG Orthology (KO) identifiers to protein coding and RNA genes. The manually curated KEGG GENES dataBASE hosts a collection of genes and proteins from over 10000 complete genomes of cellular organisms and viruses. The KEGG Automatic Annotation Server (KAAS) [[5](#ref5)] is a rapid web server that provides functional annotation of genes by assigning KO identifiers using BLAST or GHOST sequence similarity searches and bi-directional best hit information. It facilitates pathway mapping after the initial ortholog finding step using the assigned KO identifiers. This gives a better context-based information of the protein function in the organism and hence provides more cellular and organismal functional insights. KAAS can be used as follows for functional annotation of protein sequences:
 
 ```
-- Upload your FASTA file of protein sequences to one of the search programs BLAST, GHOSTX or GHOSTZ
+- Upload your FASTA file of protein sequences to one of the search programs BLAST, GHOSTX
+  or GHOSTZ
 
 - Select your reference gene set from eukaryotes, prokaryotes.
 
-- Select an assignment method from best bi-directional hit (BBH) or single bi-directional hit (SBH).
-  BBH is recommended when your query is a complete or draft genome while SBH is recommended in case of the
-  query being a subset of genes from a genome or a partial genome. Although SBH can be used for either of
-  the use-cases, it is less accurate and faster when compared to the BBH method.
+- Select an assignment method from best bi-directional hit (BBH) or single bi-directional hit
+  (SBH). BBH is recommended when your query is a complete or draft genome while SBH is
+  recommended in case of the query being a subset of genes from a genome or a partial
+  genome. Although SBH can be used for either of the use-cases, it is less accurate and
+  faster when compared to the BBH method.
 
 - Provide your official email ID.
 
@@ -78,7 +80,8 @@ Blast2GO [[6](#ref6)] is a user-friendly application for functional annotation. 
 
 - Select the executable depending on your operating system like Windows, Linux or Mac OS.
 
-- After installation, you will be prompted to enter the activation key. Enter it and restart the application.
+- After installation, you will be prompted to enter the activation key.
+  Enter it and restart the application.
 
 - Blast2GO provides options to run BLAST locally or online and interfaces with a
   number of databases like the nr, PIR, and Swiss-Prot to name a few.
@@ -91,7 +94,8 @@ Blast2GO [[6](#ref6)] is a user-friendly application for functional annotation. 
 - Next, you can also opt to run InterProScan to obtain the functional annotation for
   your sequences or directly use the run annotation option in the 'annot' menu.
 
-- After annotation, the analysis tab can be clicked to perform enrichment analysis and KEGG pathway mapping.
+- After annotation, the analysis tab can be clicked to perform enrichment analysis
+  and KEGG pathway mapping.
 
 ```
 
@@ -266,7 +270,8 @@ nextflow run FastOMA.nf -profile docker \
     --input testdata/in_folder \
     --output_folder /path/to/output/folder/sample_fastoma_test
 
-- The in_folder in the above command has the protein FASTA files inside a folder called proteome.
+- The in_folder in the above command has the protein FASTA files inside a folder called
+  proteome.
   It also has the species tree file in the Newick format.
   Please note that the protein files must have the extension .fa
 
@@ -315,11 +320,16 @@ makeblastdb -in sampleA.pep.fasta -dbtype prot -parse_seqids -out sampleA_databa
 
 ```
 
-./blastp -query sampleB.pep.fasta -db sampleA_database -evalue 1e-5 -out sampleBA.tsv -outfmt 6 -num_threads 10
+./blastp -query sampleB.pep.fasta -db sampleA_database -evalue 1e-5 \
+-out sampleBA.tsv -outfmt 6 -num_threads 10
 
-- In the above command, the parameters for -evalue flag, the output format flag -outfmt and the -num_threads flag that takes in the number of cores for the analysis, can be tweaked based on the specific analysis at hand and the resources you have.
+- In the above command, the parameters for -evalue flag, the output format flag -outfmt
+  and the -num_threads flag that takes in the number of cores for the analysis, can be
+  tweaked based on the specific analysis at hand and the resources you have.
 
-- There are also other available executables like blastx and blastn. More parameters of blastp and the other executables can be obtained by using the -h flag along with the specific executable's name.
+- There are also other available executables like blastx and blastn. More parameters
+  of blastp and the other executables can be obtained by using the -h flag along
+  with the specific executable's name.
 
 ```
 
@@ -503,7 +513,8 @@ cd iqtree-3.0.1-Linux/bin
     m - MFP -> ModelFinder Plus (https://iqtree.github.io/doc/Substitution-Models)
     wsr -> write site rates
     alrt -> number of bootstrap replicates for SH-alrt test
-    Shimodaira-Hasegawa approximate Likelihood Ratio Test -> how confident should you be about each branch in your tree
+    Shimodaira-Hasegawa approximate Likelihood Ratio Test -> how confident should you be
+                                                             about each branch in your tree
     B -> Ultrafast bootstrap
     pre -> full path to output folder with the name of your treefile
     T -> Number of cores for the phylogeny analysis
@@ -606,34 +617,43 @@ python -m jcvi.compara.catalog ortholog sampleA sampleB --no_strip_names
 
 python -m jcvi.graphics.dotplot sampleA.sampleB.anchors
 
-This step produces a dot plot in the PDF format and helps infer the genome-wide synteny pattern between the genomes.
+This step produces a dot plot in the PDF format and helps infer the genome-wide synteny
+pattern between the genomes.
 
 # Macrosynteny visualization
 
-- Karyotype plots help visualize synteny between specified chromosomes of the genomes being compared.
+- Karyotype plots help visualize synteny between specified chromosomes of the genomes
+  being compared.
 
--First step for this is to produce a more concise form of the anchors file called the anchors.simple file
+-First step for this is to produce a more concise form of the anchors file called the
+ anchors.simple file
 
 # Make a succint version of the anchors file
 
-python -m jcvi.compara.synteny screen --minspan=30 --simple sampleA.sampleB.anchors sampleA.sampleB.anchors.new
+python -m jcvi.compara.synteny screen --minspan=30 \
+--simple sampleA.sampleB.anchors sampleA.sampleB.anchors.new
 
-- The parameter of the --minspan flag in the above command specifies the minimum number of genes
-  spanning a synteny block for the block to be retained. This step produces a .anchors.simple file.
+- The parameter of the --minspan flag in the above command specifies the minimum number
+  of genes spanning a synteny block for the block to be retained.
+  This step produces a .anchors.simple file.
 
-- Next, two more input files need to be prepared - first the seqids file and then the layout file.
+- Next, two more input files need to be prepared - first the seqids file and
+  then the layout file.
 
-- seqids file is a simple TXT file named seqids. It should have the chromosome identifiers of sampleA in first row and sampleB in second row, each separated by commas, as shown below
+- seqids file is a simple TXT file named seqids. It should have the chromosome identifiers
+  of sampleA in first row and sampleB in second row, each separated by commas, as shown below
 
-chrA1,chrA2,chrA3,chrA4,chrA5
-chrB1,chrB2,chrB3,chrB4
+  chrA1,chrA2,chrA3,chrA4,chrA5
+  chrB1,chrB2,chrB3,chrB4
 
-- layout file is a simple TXT design file named layout that specifies positional and style information of the plot.
-  It is divided into two sections - the upper section and the lower section. The upper section has eight columns -
-  y axis position, x axis start, x axis end, degree of rotation, colour (colour needs to be specified in hex code like #fc8d62),
-  labels to be displayed, vertical alignment of the chromosomes per species, and the name of the BED file to be used.
-  The lower section specifies the boundaries to draw the edges based on the information from the .anchors.simple file.
-  A sample layout file (adopted from the official MCScan documentation) is shown below:
+- layout file is a simple TXT design file named layout that specifies positional and style
+  information of the plot. It is divided into two sections - the upper section and the lower
+  section. The upper section has eight columns - y axis position, x axis start, x axis end,
+  degree of rotation, colour (colour needs to be specified in hex code like #fc8d62), labels
+  to be displayed, vertical alignment of the chromosomes per species, and the name of the BED
+  file to be used. The lower section specifies the boundaries to draw the edges based on the
+  information from the .anchors.simple file. A sample layout file
+  (adopted from the official MCScan documentation) is shown below:
 
 # y, xstart, xend, rotation, color, label, va,  bed
  .6,     .1,    .8,       0,      , sampleA, top, sampleA.bed
@@ -648,32 +668,36 @@ python -m jcvi.graphics.karyotype seqids layout
 # Microsynteny visualization
 
 - JCVI/ MCScan offers great flexibility and wide range of synteny visualization options.
-  Microsynteny visualization helps view the local synteny at the gene level of your desired region in the genome.
+  Microsynteny visualization helps view the local synteny at the gene level of your desired
+  region in the genome.
 
-- After the pairwise synteny step, for a microsyteny visualization, a blocks file needs to be obtained.
+- After the pairwise synteny step, for a microsyteny visualization, a blocks file needs
+  to be obtained.
 
 # Obtain blocks file for miscrosynteny
 
-python -m jcvi.compara.synteny mcscan sampleA.sampleB sampleA.sampleB.lifted.anchors --iter=1 -o sampleA.sampleB.i1.blocks
+python -m jcvi.compara.synteny mcscan sampleA.sampleB sampleA.sampleB.lifted.anchors \
+--iter=1 -o sampleA.sampleB.i1.blocks
 
-- In the above command, the parameter of the --iter flag specifies the number of best hits to be extracted
-  per gene from the LAST results to make the blocks file and can be tweaked according to your use case.
+- In the above command, the parameter of the --iter flag specifies the number of best hits to
+  be extracted per gene from the LAST results to make the blocks file and can be tweaked
+  according to your use case.
 
 # Extract specific region of interest from the full blocks file
 
-- Let's say you want to visualize the first 50 genes in the blocks file, then you need to extract this region
-  into another blocks file that will be used for the visualization.
+- Let's say you want to visualize the first 50 genes in the blocks file, then you need
+  to extract this region into another blocks file that will be used for the visualization.
 
 head -50 sampleA.sampleB.i1.blocks > blocks
 
 # Prepare the blocks layout file
 
-- The microsynteny visualization does not need the seqids file but it needs the TXT layout file similar
-  to the one required for macrosynteny visualization. Let us name it blocks.layout, since this is the
-  design file describing the synteny plot for the blocks file we extracted in the previous step.
-  Everthing remains the same in this file like the macrosynteny layout file except that, since
-  .anchors.simple file is not produced in microsynteny visualization, the lower section of the
-  layout file does not have the name of the .anchors.simple file.
+- The microsynteny visualization does not need the seqids file but it needs the TXT layout
+  file similar to the one required for macrosynteny visualization. Let us name it blocks.layout,
+  since this is the design file describing the synteny plot for the blocks file we extracted
+  in the previous step. Everything remains the same in this file like the macrosynteny layout
+  file except that, since .anchors.simple file is not produced in microsynteny visualization,
+  the lower section of the layout file does not have the name of the .anchors.simple file.
 
 # Get a microsynteny plot
 
@@ -778,10 +802,11 @@ make
 
 ```
 
-- The DaliLite software needs the PDB file format to be converted into an internal format that DaliLite accepts.
-  This is achieved with the import.pl script. The user's private protein file can be used when going for pairwise
-  or all against all searches. But in case of database search, the public database structure fields must be mirrored
-  and converted to the required format using the import.pl script.
+- The DaliLite software needs the PDB file format to be converted into an internal format that
+  DaliLite accepts. This is achieved with the import.pl script. The user's private protein
+  file can be used when going for pairwise or all against all searches. But in case of database
+  search, the public database structure fields must be mirrored and converted to the required
+  format using the import.pl script.
 
 # Import private protein structure files
 
@@ -789,8 +814,9 @@ cd /path/to/folder/DaliLite.v5/bin
 
 ./import.pl --pdbfile sample.pdb --pdbid samp --dat /path/to/DATA --clean
 
-- In the above command the PDB ID must alway be of 4 letters as it is hard coded. --dat flag specifies the output
-  folder for the reformatted file. All structures for a comparison must be provided in a single directory.
+- In the above command the PDB ID must alway be of 4 letters as it is hard coded.
+  --dat flag specifies the output folder for the reformatted file.
+  All structures for a comparison must be provided in a single directory.
 
 # Import public database structure files 
 
@@ -801,9 +827,11 @@ cd /path/to/folder/DaliLite.v5/bin
 
 # Make a BLAST database for the structure based database search
 
-- BLAST is used to group together sequences that show sequence level similarity before the structural alignment step
+- BLAST is used to group together sequences that show sequence level similarity
+  before the structural alignment step
 
- The following commands can be used to extract sequences from the imported structures into a FASTA file:
+ The following commands can be used to extract sequences from the imported structures
+ into a FASTA file:
 
 # Obtain a list of protein structures in the Dali format from the previous step(s)
 
@@ -811,7 +839,8 @@ ls /path/to/folder/DATA | perl -pe 's/\.dat//' > pdb.list
 
 # Obtain FASTA sequences from the protein structure files
 
-./dat2fasta.pl /path/to/folder/DATA < pdb.list | awk -v RS=">" -v FS="\n" -v ORS="" ' { if ($2) print ">"$0 } ' > pdb.fasta
+./dat2fasta.pl /path/to/folder/DATA < pdb.list | awk -v RS=">" -v FS="\n" -v ORS="" ' \
+{ if ($2) print ">"$0 } ' > pdb.fasta
 
 # Create a BLAST database
 
@@ -873,22 +902,26 @@ This should display the usage instructions for running foldseek
 **Running foldseek:**
 
 ```
-- There are a number of options available in foldseek starting with structural search of simple and complex proteins,
-  clustering, and database creation to name a few. Here we will look at sample commands for structural search of proteins
-  in the light of their relevance to functional annotation.
+- There are a number of options available in foldseek starting with structural search of
+  simple and complex proteins, clustering, and database creation to name a few.
+  Here we will look at sample commands for structural search of proteins in the
+  light of their relevance to functional annotation.
 
-foldseek easy-search /path/to/query/structure/sample /path/to/target/structures/database aln /path/to/tmp
+foldseek easy-search /path/to/query/structure/sample \
+/path/to/target/structures/database aln /path/to/tmp
 
-- The easy-search command above is a part of the easy workflows of foldseek. It enables structural search of simple
-  single chain protein structure files or FASTA files against a target database. sample_aln represents the resulting
-  srtuctural alignment file and tmp is the temporary folder for storing intermediate files during the run.
+- The easy-search command above is a part of the easy workflows of foldseek. It enables
+  structural search of simple single chain protein structure files or FASTA files against
+  a target database. sample_aln represents the resulting sructural alignment file and
+  tmp is the temporary folder for storing intermediate files during the run.
 
 foldseek search sampleDB targetDB resultDB tmp
 
-- The above search command is a part of the main workflows of foldseek. It enables searching a database of protein
-  structures against another target database and also provides options for sensitive search and clustering with
-  additional parameters. In the above command, sampleDB represents the sample database, targetDB represents the
-  target database, and resultDB represents the result database of the run with temporary files being stored in the tmp folder.
+- The above search command is a part of the main workflows of foldseek. It enables searching a
+  database of protein structures against another target database and also provides options for
+  sensitive search and clustering with additional parameters. In the above command, sampleDB
+  represents the sample database, targetDB represents the target database, and resultDB
+  represents the result database of the run with temporary files being stored in the tmp folder.
 
 ```
 Official documentation: https://github.com/steineggerlab/foldseek
@@ -919,8 +952,9 @@ BiocManager::install("GENIE3")
 
 ```
 - GENIE3 requires expression data file in the following format -
-  the rows should correspond to genes and the columns should correspond to samples. It is important to note
-  that normalized expression data needs to be loaded for the GENEIE3 analysis.
+  the rows should correspond to genes and the columns should correspond to samples.
+  It is important to note that normalized expression data needs to be loaded for
+  the GENEIE3 analysis.
 
 # Load expression data file into R
 
@@ -938,11 +972,13 @@ set.seed(42)
 
 weightMat <- GENIE3(expr_data)
 
-- The weight matrix has the genes in rows and columns and specifies the correlation weight between
-  a gene pair. The greater the weight between a gene pair, stronger is the regulatory link between them.
+- The weight matrix has the genes in rows and columns and specifies the correlation weight
+  between a gene pair. The greater the weight between a gene pair, stronger is the regulatory
+  link between them.
 
-- By default all genes in your analysis are taken as regulatory candidates. In case you know apriori about
-  which genes are transcription factors, that subset of genes can be specified as regulators.
+- By default all genes in your analysis are taken as regulatory candidates. In case you know
+  apriori about which genes are transcription factors, that subset of genes can be
+  specified as regulators.
 
 # Specify a subset of regulator genes
 
@@ -989,7 +1025,8 @@ python3 coexp_phylo.py --config sample_config.txt --out sample_results
 
 - The four mandatory columns to be specified in order are name of the species to be analyzed,
   full path to the expression file of the species, full path to the coding sequence FASTA file
-  of the species, full path to the baits file that has the gene identifiers of the bait sequences.
+  of the species, full path to the baits file that has the gene identifiers of the bait
+  sequences.
 
 - The full path to be specified must also have the name of the respective file.
 
@@ -1008,9 +1045,10 @@ Knowledge-based Identification of Pathway Enzymes (KIPEs) [[23](#ref23)] is a Py
 ```
 # Installing dependencies
 
-- The tool needs dendropy, BLAST, MAFFT as mandatory depedencies and FastTree as optional dependencies.
-  The installation instructions for BLAST and MAFFT can be found in the aligners section above and those
-  for FastTree can be found in the phylogenetic analysis section above. dendropy can be installed as follows:
+- The tool needs dendropy, BLAST, MAFFT as mandatory depedencies and FastTree as optional
+  dependencies. The installation instructions for BLAST and MAFFT can be found in the aligners
+  section above and those for FastTree can be found in the phylogenetic analysis section above.
+  dendropy can be installed as follows:
 
 # Install the pip package manager
 
@@ -1028,7 +1066,8 @@ git clone https://github.com/bpucker/KIPEs
 
 cd /path/to/folder/KIPEs
 
-- In the above folder you will find the KIPEs3.py script, and the baits folder needed for the analysis.
+- In the above folder you will find the KIPEs3.py script, and the baits folder
+  needed for the analysis.
 
 ```
 
@@ -1039,9 +1078,10 @@ cd /path/to/folder/KIPEs
 python3 KIPEs3.py --baits /path/to/folder/KIPEs/baits \
 --out /path/to/output/folder --subject /path/to/sample.pep.fasta
 
-- In the above command, sample.pep.fasta is the FASTA file of your query proteins that are to be
-  annotated using KIPEs. It is also possible to specify a folder of peptide FASTA files to be
-  annotated instead of a single file using the --subjectdir flag.
+- In the above command, sample.pep.fasta is the FASTA file of your query proteins
+  that are to be annotated using KIPEs. It is also possible to specify a folder of
+  peptide FASTA files to be annotated instead of a single file
+  using the --subjectdir flag.
 
 ```  
 **Official documentation:** https://github.com/bpucker/KIPEs
@@ -1067,9 +1107,11 @@ docker pull shakunthalan/dupylicate:latest
 
  docker run --rm -u $(id -u) -v /path/to/data:/data shakunthalan/dupylicate:latest
 
-- In the above command /path/to/data:/data must be replaced by your specific host and container paths.
+- In the above command /path/to/data:/data must be replaced by your specific host
+  and container paths.
 
-- The above command should display the DupyliCate usage indicating a successful pull of the docker image.
+- The above command should display the DupyliCate usage indicating a successful
+  pull of the docker image.
 
 ```
 
@@ -1082,11 +1124,11 @@ shakunthalan/dupylicate:latest --gff /data/path/to/folder/sample.gff \
 --pep /data/path/to/folder/sample.pep.fasta --out /data/path/to/output/folder
 
 
-- The above command is a basic sample command for running DupyliCate. Options to integrate the expression
-  analysis and the ortholog search can be found in the official documentation page. In the above command
-  it is important to note that the names of the gff and pep  file without the extension should be the same.
-  The --gff and --pep flags can also take in folders in which case the folder path must include the folder
-  name and include  a / at the end of the full path.
+- The above command is a basic sample command for running DupyliCate. Options to integrate the
+  expression analysis and the ortholog search can be found in the official documentation page.
+  In the above command, it is important to note that the names of the gff and pep  file without
+  the extension should be the same. The --gff and --pep flags can also take in folders in which
+  case the folder path must include the folder name and include  a / at the end of the full path.
 
 ```
 
