@@ -329,7 +329,7 @@ makeblastdb -in sampleA.pep.fasta -dbtype prot -parse_seqids -out sampleA_databa
 
 construct_anno.py is a Python script that transfers functions from a reference for eg., A. thaliana to the query using BLAST. This requires polypeptide sequences from the query (sample) and the reference. The reference functional annotation needs to be provided as a two column tab-separated file where the first column is the gene identifier and the second column is the function of the gene.
 
-**Fetching and running algntrim.py:**
+**Fetching and running construct_anno.py:**
 ```
 # Fetch the script from this GitHub repository in a folder of your choice
 
