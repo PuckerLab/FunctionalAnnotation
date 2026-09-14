@@ -4,18 +4,19 @@
 
 **Collection of command line protocols of functional annotation tools in plant genomics**
 
-## Overview
+# Overview
 
-Many tools are available for various tasks in plant genomics. Finding the right tool for a certain purpose can be challenging. This repository provides an overview of recommended tools specifically for functional annotation in plant genomics. This documentation is a guide elucidating step-by-step usage of some widely used functional annotation tools in plant genomics. It is important to note that the installation method outlined for each of the tools is based on the ease-of-installation for users of all levels, and the possibility of errors and bugs that can be encountered while doing so. Hence, the installation method detailed can differ from the officially recommended installation methods in the respective tools' documentation pages. Further, the tools covered range from user-friendly databases to advanced command-line tools. This will be of use to biologists interested in functional annotation of genes of interest in their own research. Each of the commands and usage instructions here are based on an example file named 'sample' and need to adapted based on the user's own use-case. If the user is not familiar with linux environment and packages for software installation, it is first recommended to read these relevant guidelines specified in https://github.com/PuckerLab/PlantGenomicsGuide. 
+Many tools are available for various tasks in plant genomics. Finding the right tool for a certain purpose can be challenging. This repository provides an overview of recommended tools specifically for functional annotation in plant genomics in the first section. This documentation is a guide elucidating step-by-step usage of some widely used functional annotation tools in plant genomics. It is important to note that the installation method outlined for each of the tools is based on the ease-of-installation for users of all levels, and the possibility of errors and bugs that can be encountered while doing so. Hence, the installation method detailed can differ from the officially recommended installation methods in the respective tools' documentation pages. Further, the tools covered range from user-friendly databases to advanced command-line tools. This will be of use to biologists interested in functional annotation of genes of interest in their own research. Each of the commands and usage instructions here are based on an example file named 'sample' and need to adapted based on the user's own use-case. If the user is not familiar with linux environment and packages for software installation, it is first recommended to read these relevant guidelines specified in https://github.com/PuckerLab/PlantGenomicsGuide. The second section of this repository provides example-based guidance for various functional annotation approaches using selected research case studies.
 
+# I. Functional annotation tools
 
 ## I. Functional annotation database tools
 
-### 1. InterProScan5
+### 1. InterProScan6
 
-InterPro [[1](#ref1)] is a database integrating predictive information about protein function from a number of partner resources like CATH, CDD, PANTHER, and Pfam to name a few. It is hosted and maintained by EMBL-EBI. InterProScan5 is a software for functional annotation of proteins. It is integrated with the InterPro database and can be installed locally. Step by step instructions for using the tool can be found at https://github.com/PuckerLab/PlantGenomicsGuide 
+InterPro [[1](#ref1)] is a database integrating predictive information about protein function from a number of partner resources like CATH, CDD, PANTHER, and Pfam to name a few. It is hosted and maintained by EMBL-EBI. InterProScan6 is a software for functional annotation of proteins. It is integrated with the InterPro database and can be installed locally. Step by step instructions for using the tool can be found at https://github.com/PuckerLab/PlantGenomicsGuide 
 
-**Official documentation:** https://interproscan-docs.readthedocs.io/en/v5/
+**Official documentation:** https://interproscan-docs.readthedocs.io/en/v6/
 
 ### 2. Mercator4
 
@@ -1073,10 +1074,25 @@ shakunthalan/dupylicate:latest --gff /data/path/to/folder/sample.gff \
 
 **Official documentation:** https://github.com/ShakNat/DupyliCate
 
-## References
+
+# II. Research use case-based compilation of functional annotation approaches from selected research case studies
+
+| Research case study                                                                                      | Biological scenario                                                                                                  | Functional annotation approaches used                                    | Functional annotation tools applied                                                                                                                                                                                             |
+|----------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Functional annotation of polyploid wheat genome [[36](#ref36)]                                           | Polyploid genome sequence annotation                                                                                 | Phylogeny, expression analysis                                           | ENSEMBL Plants [[25](#ref25)], BLAST [[10](#ref10)], GENIE3 [[21](#ref21)], KnetMiner [[25](#ref25)]                                                                                                                            |
+| Functional analysis of orphan genes in Brassica rapa [[37](#ref37)]                                      | Orphan gene functional annotation                                                                                    | Domain-based search, sequence similarity approach, experimental analysis | CDD [[27](#ref27)], Pfam [[28](#ref28)], BLAST [[10](#ref10)], Overexpression analysis and CRISPR/ Cas9 [[36](#ref36)]                                                                                                          |
+| Comparative transcriptomic analysis of organ-specific genes in land plants [[39](#ref39)]                | Expression-based ortholog identification and functional grouping                                                     | Phylogeny, expression analysis                                           | OrthoFinder [[7](#ref7)], ETE3 [[29](#ref29)], Mercator4 [[2](#ref2)] [[3](#ref3)], CoNekT [[30](#ref30)]                                                                                                                       |
+| Identification and functional annotation of horizontally transferred genes in land plants [[40](#ref40)] | Xenolog functional annotation                                                                                        | Sequence similarity, Phylogeny                                           | BLAST [[10](#ref10)], IQ-TREE [[15](#ref15)], MrBayes [[31](#ref31)], EggNOG [[31](#ref31)]                                                                                                                                     |
+| Flavonol regulator evolution in Brassicaceae [[41](#ref41)]                                              | Functional annotation and evolutionary analysis of rapidly evolving/ lineage-specific gene family                    | Sequence similarity, Phylogeny, Synteny                                  | BLAST [[10](#ref10)], MAFFT [[12](#ref12)] [[13](#ref13)], FastTree [[16](#ref16)]], RAxML-NG [[33](#ref33)], Dendropy [[34](#ref34)], JCVI, iTOL [[35](#ref35)]                                                                |
+| Discovery of genes involved in withanolide biosynthesis [[42](#ref42)]                                   | Identifying genes encoding proteins involved in priorly known functions or enzymatic steps in a biosynthetic pathway | Sequence similarity, Phylogeny, Synteny, Expression analysis             | BLAST [[10](#ref10)], IQ-TREE [[15](#ref15)], JCVI [[17](#ref17)]                                                                                                                                                               |
+| Functional analysis of flavonol synthase gene duplicates in Brassicaceae [[24](#ref24)]                  | Functional analysis of duplicated genes/ large gene family                                                           | Sequence similarity, Phylogeny, Synteny, Expression analysis             | DupyliCate [[24](#ref24)]<br> (uses DIAMOND [[11](#ref11)], FastTree [[16](#ref16)]], Dendropy [[34](#ref34)], in-built expression analysis and functional divergence assessment), IQ-TREE3 [[15](#ref15)], iTOL [[35](#ref35)] |
+| Structure-based protein function determination in plants [[43](#ref43)]                                  | Functional annotation of genes without sequence-based homologs                                                       | Structure                                                                | Foldseek [[20](#ref20)], InterProScan [[1](#ref1)]                                                                                                                                                                              |
+
+
+## References for functional annotation tools
 
 <a id="ref1"></a>
-[1] Jones, P. et al. InterProScan 5: genome-scale protein function classification. Bioinformatics 30, 1236–1240 (2014).
+[1] 1.  Blum, M., Hobbs, E., Florentino, L. & Bateman, A. InterProScan 6: a modern large-scale protein function annotation pipeline. Bioinformatics Advances 6, vbag141 (2026).
 
 <a id="ref2"></a>
 [2] Schwacke, R. et al. MapMan4: A Refined Protein Classification and Annotation Framework Applicable to Multi-Omics Data Analysis. Molecular Plant 12, 879–892 (2019).
@@ -1145,8 +1161,67 @@ shakunthalan/dupylicate:latest --gff /data/path/to/folder/sample.gff \
 [23] KIPEs3: Automatic annotation of biosynthesis pathways | PLOS One. https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0294342.
 
 <a id="ref24"></a>
-[24] DupyliCate: mining, classifying, and characterizing gene duplications | bioRxiv. https://www.biorxiv.org/content/10.1101/2025.10.10.681656v2.
+[24] Natarajan, S. & Pucker, B. DupyliCate: mining, classifying, and characterizing gene duplications. Sci Rep 16, 16557 (2026).
+
+<a id="ref25"></a>
+[25] Bolser, D., Staines, D. M., Pritchard, E. & Kersey, P. Ensembl Plants: Integrating Tools for Visualizing, Mining, and Analyzing Plant Genomics Data. in Plant Bioinformatics: Methods and Protocols (ed. Edwards, D.) 115–140 (Springer, New York, NY, 2016). doi:10.1007/978-1-4939-3167-5_6.
+
+<a id="ref26"></a>
+[26] Hassani-Pak, K. et al. KnetMiner: a comprehensive approach for supporting evidence-based gene discovery and complex trait analysis across species. Plant Biotechnology Journal 19, 1670–1678 (2021).
+
+<a id="ref27"></a>
+[27] Marchler-Bauer, A. et al. CDD: a Conserved Domain Database for the functional annotation of proteins. Nucleic Acids Res 39, D225–D229 (2011).
+
+<a id="ref28"></a>
+[28] Mistry, J. et al. Pfam: The protein families database in 2021. Nucleic Acids Res 49, D412–D419 (2021).
+
+<a id="ref29"></a>
+[29] Huerta-Cepas, J., Serra, F. & Bork, P. ETE 3: Reconstruction, Analysis, and Visualization of Phylogenomic Data. Mol Biol Evol 33, 1635–1638 (2016).
+
+<a id="ref30"></a>
+[30] Proost, S. & Mutwil, M. CoNekT: an open-source framework for comparative genomic and transcriptomic network analyses. Nucleic Acids Res 46, W133–W140 (2018).
+
+<a id="ref31"></a>
+[31] Huelsenbeck, J. P. & Ronquist, F. MRBAYES: Bayesian inference of phylogenetic trees. Bioinformatics 17, 754–755 (2001).
+
+<a id="ref32"></a>
+[32] Huerta-Cepas, J. et al. eggNOG 5.0: a hierarchical, functionally and phylogenetically annotated orthology resource based on 5090 organisms and 2502 viruses. Nucleic Acids Res 47, D309–D314 (2019).
+
+<a id="ref33"></a>
+[33] Kozlov, A. M., Darriba, D., Flouri, T., Morel, B. & Stamatakis, A. RAxML-NG: a fast, scalable and user-friendly tool for maximum likelihood phylogenetic inference. Bioinformatics 35, 4453–4455 (2019).
+
+<a id="ref34"></a>
+[34] Sukumaran, J. & Holder, M. T. DendroPy: a Python library for phylogenetic computing. Bioinformatics 26, 1569–1571 (2010).
+
+<a id="ref35"></a>
+[35] Letunic, I. & Bork, P. Interactive Tree of Life (iTOL) v6: recent updates to the phylogenetic tree display and annotation tool. Nucleic Acids Res 52, W78–W82 (2024).
 
 
+## References for research case studies and experimental methods used in them
+
+<a id="ref36"></a>
+[36] Adamski, N. M. et al. A roadmap for gene functional characterisation in crops with large genomes: Lessons from polyploid wheat. eLife 9, e55646 (2020).
+
+<a id="ref37"></a>
+[37] Jiang, M. et al. Brassica rapa orphan genes largely affect soluble sugar metabolism. Hortic Res 7, 181 (2020).
+
+<a id="ref38"></a>
+[38] Jinek, M. et al. A Programmable Dual-RNA–Guided DNA Endonuclease in Adaptive Bacterial Immunity. Science 337, 816–821 (2012).
+
+<a id="ref39"></a>
+[39] Julca, I. et al. Comparative transcriptomic analysis reveals conserved programmes underpinning organogenesis and reproduction in land plants. Nat. Plants 7, 1143–1159 (2021).
+
+<a id="ref40"></a>
+[40] Ma, J. et al. Major episodes of horizontal gene transfer drove the evolution of land plants. Molecular Plant 15, 857–871 (2022).
+
+<a id="ref41"></a>
+[41] Schilbert, H. M. & Glover, B. J. Analysis of flavonol regulator evolution in the Brassicaceae reveals MYB12, MYB111 and MYB21 duplications and MYB11 and MYB24 gene loss. BMC Genomics 23, 604 (2022).
+
+<a id="ref42"></a>
+[42] Hakim, S. E. et al. Phylogenomics and metabolic engineering reveal a conserved gene cluster in Solanaceae plants for withanolide biosynthesis. Nat Commun 16, 6367 (2025).
+
+<a id="ref43"></a>
+[43] Chen, J. et al. Structure-guided discovery of protein functions in plants. Plant Cell 38, koag022 (2026).
+ 
 
 **If you have questions about plant genomics that were not answered by any of these resources, please feel free to get in touch with the [Plant Biotechnology and Biotechnology](https://www.izmb.uni-bonn.de/en/pbb/contact) research group at the University of Bonn.**
