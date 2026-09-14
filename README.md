@@ -325,6 +325,24 @@ makeblastdb -in sampleA.pep.fasta -dbtype prot -parse_seqids -out sampleA_databa
 
 **Official documentation:** https://blast.ncbi.nlm.nih.gov/doc/blast-help/
 
+#### Transferring functions with construct_anno.py
+
+construct_anno.py is a Python script that transfers functions from a reference for eg., A. thaliana to the query using BLAST. This requires polypeptide sequences from the query (sample) and the reference. The reference functional annotation needs to be provided as a two column tab-separated file where the first column is the gene identifier and the second column is the function of the gene.
+
+**Fetching and running algntrim.py:**
+```
+# Fetch the script from this GitHub repository in a folder of your choice
+
+wget https://raw.githubusercontent.com/PuckerLab/FunctionalAnnotation/refs/heads/main/construct_anno.py
+
+# Run construct_anno.py
+
+python3 construct_anno.py --in sample.pep --ref reference.pep \
+--anno reference_functional_annotation.tsv --out /path/to/results/folder
+
+```
+
+
 ### 9. DIAMOND
 
 DIAMOND [[11](#ref11)] is another aligner similar to BLAST. But it is 100x-10000x faster than BLAST. It facilitates both protein and translated DNA searches. It offers options to decide between the different levels of sensitivity, and thereby helps optimize the computational costs and accuracy. With its ability to cluster billions of proteins and low resource consumption, it is becoming a widely used tool both standalone, as well in integration with other bioinformatics tools and pipelines.
