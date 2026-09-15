@@ -1323,6 +1323,7 @@ shakunthalan/dupylicate:latest --gff /data/path/to/folder/sample.gff \
 
 <a id="ref43"></a>
 [[43]](https://doi.org/10.1093/plcell/koag022) Chen, J. et al. Structure-guided discovery of protein functions in plants. Plant Cell 38, koag022 (2026).
+
 [43] Chen, J. et al. Structure-guided discovery of protein functions in plants. Plant Cell 38, koag022 (2026).
  
 
