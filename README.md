@@ -6,8 +6,8 @@
 
 | S.&nbsp;No. | Contents |
 |---|---|
-| [1](#overview) | <h3>Overview |
-| [2](#i-functional-annotation-tools) | <h3>I. Functional annotation tools</h3> |
+| [1](#overview) | <strong>Overview |
+| [2](#i-functional-annotation-tools) | <strong><font size="8">I. Functional annotation tools</font></strong> |
 | [3](#i-functional-annotation-database-tools) | I. Functional annotation database tools |
 | [4](#1-interproscan6) | InterProScan6 |
 | [5](#2-mercator4) | Mercator4 |
@@ -43,7 +43,7 @@
 | [35](#19-coexpphylo) | CoExpPhylo |
 | [36](#20-kipes) | KIPEs |
 | [37](#21-dupylicate) | DupyliCate |
-| [38](#ii-research-use-case-based-compilation-of-functional-annotation-approaches-from-selected-research-case-studies) | <h3>II. Research use case-based compilation of functional annotation approaches from selected research case studies</h3> |
+| [38](#ii-research-use-case-based-compilation-of-functional-annotation-approaches-from-selected-research-case-studies) | <strong><font size="8">II. Research use case-based compilation of functional annotation approaches from selected research case studies</font></strong> |
 | [39](#references-for-functional-annotation-tools) | References for functional annotation tools |
 | [40](#references-for-research-case-studies-and-experimental-methods-used-in-them) | References for research case studies and experimental methods used in them |
 
