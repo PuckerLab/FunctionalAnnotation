@@ -1191,11 +1191,144 @@ shakunthalan/dupylicate:latest --gff /data/path/to/folder/sample.gff \
 | Functional analysis of flavonol synthase gene duplicates in Brassicaceae [[24](#ref24)]                  | Functional analysis of duplicated genes/ large gene family                                                           | Sequence similarity, Phylogeny, Synteny, Expression analysis             | DupyliCate [[24](#ref24)]<br> (uses DIAMOND [[11](#ref11)], FastTree [[16](#ref16)]], Dendropy [[34](#ref34)], in-built expression analysis and functional divergence assessment), IQ-TREE3 [[15](#ref15)], iTOL [[35](#ref35)] |
 | Structure-based protein function determination in plants [[43](#ref43)]                                  | Functional annotation of genes without sequence-based homologs                                                       | Structure                                                                | Foldseek [[20](#ref20)], InterProScan [[1](#ref1)]                                                                                                                                                                              |
 
+## References for functional annotation tools
+
+<a id="ref1"></a>
+[[1]](https://doi.org/10.1093/bioadv/vbag141) Blum, M., Hobbs, E., Florentino, L. & Bateman, A. InterProScan 6: a modern large-scale protein function annotation pipeline. Bioinformatics Advances 6, vbag141 (2026).
+
+<a id="ref2"></a>
+[[2]](https://doi.org/10.1016/j.molp.2019.01.003) Schwacke, R. et al. MapMan4: A Refined Protein Classification and Annotation Framework Applicable to Multi-Omics Data Analysis. Molecular Plant 12, 879–892 (2019).
+
+<a id="ref3"></a>
+[[3]](https://doi.org/10.1007/978-1-0716-1609-3_9) Bolger, M., Schwacke, R. & Usadel, B. MapMan Visualization of RNA-Seq Data Using Mercator4 Functional Annotations. in Solanum tuberosum: Methods and Protocols (eds. Dobnik, D., Gruden, K., Ramšak, Ž. & Coll, A.) 195–212 (Springer US, New York, NY, 2021). doi:10.1007/978-1-0716-1609-3_9.
+
+<a id="ref4"></a>
+[[4]](https://doi.org/10.1093/nar/gkae909) Kanehisa, M., Furumichi, M., Sato, Y., Matsuura, Y. & Ishiguro-Watanabe, M. KEGG: biological systems database as a model of the real world. Nucleic Acids Res 53, D672–D677 (2025).
+
+<a id="ref5"></a>
+[[5]](https://doi.org/10.1093/nar/gkm321) Moriya, Y., Itoh, M., Okuda, S., Yoshizawa, A. C. & Kanehisa, M. KAAS: an automatic genome annotation and pathway reconstruction server. Nucleic Acids Res 35, W182–W185 (2007).
+
+<a id="ref6"></a>
+[[6]](https://doi.org/10.1155/2008/619832) Conesa, A. & Götz, S. Blast2GO: A Comprehensive Suite for Functional Analysis in Plant Genomics. International Journal of Plant Genomics 2008, 619832 (2008).
+
+<a id="ref7"></a>
+[[7]](https://doi.org/10.1101/2025.07.15.664860) Emms, D. M., Liu, Y., Belcher, L., Holmes, J. & Kelly, S. OrthoFinder: scalable phylogenetic orthology inference for comparative genomics. 2025.07.15.664860 Preprint at https://doi.org/10.1101/2025.07.15.664860 (2025).
+
+<a id="ref8"></a>
+[[8]](https://doi.org/10.1186/s13059-022-02652-8) Emms, D. M. & Kelly, S. SHOOT: phylogenetic gene search and ortholog inference. Genome Biol 23, 85 (2022).
+
+<a id="ref9"></a>
+[[9]](https://doi.org/10.1038/s41592-024-02552-8) Majidian, S. et al. Orthology inference at scale with FastOMA. Nat Methods 22, 269–272 (2025).
+
+<a id="ref10"></a>
+[[10]](https://doi.org/10.1016/S0022-2836(05)80360-2) Altschul, S. F., Gish, W., Miller, W., Myers, E. W. & Lipman, D. J. Basic local alignment search tool. Journal of Molecular Biology 215, 403–410 (1990).
+
+<a id="ref11"></a>
+[[11]](https://doi.org/10.1038/s41592-021-01101-x) Buchfink, B., Reuter, K. & Drost, H.-G. Sensitive protein alignments at tree-of-life scale using DIAMOND. Nat Methods 18, 366–368 (2021).
+
+<a id="ref12"></a>
+[[12]](https://doi.org/10.1093/nar/gkf436) Katoh, K., Misawa, K., Kuma, K. & Miyata, T. MAFFT: a novel method for rapid multiple sequence alignment based on fast Fourier transform. Nucleic Acids Res 30, 3059–3066 (2002).
+
+<a id="ref13"></a>
+[[13]](https://doi.org/10.1093/molbev/mst010) Katoh, K. & Standley, D. M. MAFFT Multiple Sequence Alignment Software Version 7: Improvements in Performance and Usability. Mol Biol Evol 30, 772–780 (2013).
+
+<a id="ref14"></a>
+[[14]](https://doi.org/10.1038/s41467-022-34630-w) Edgar, R. C. Muscle5: High-accuracy alignment ensembles enable unbiased assessments of sequence homology and phylogeny. Nat Commun 13, 6968 (2022).
+
+<a id="ref15"></a>
+[[15]](https://doi.org/10.32942/X2P62N) Wong, T. K. F. et al. IQ-TREE 3: Phylogenomic Inference Software using Complex Evolutionary Models. https://ecoevorxiv.org/repository/view/8916/ (2025).
+
+<a id="ref16"></a>
+[[16]](https://doi.org/10.1371/journal.pone.0009490) Price, M. N., Dehal, P. S. & Arkin, A. P. FastTree 2 – Approximately Maximum-Likelihood Trees for Large Alignments. PLOS ONE 5, e9490 (2010).
+
+<a id="ref17"></a>
+[[17]](https://doi.org/10.1002/imt2.211) Tang, H. et al. JCVI: A versatile toolkit for comparative genomics analysis. iMeta 3, e211 (2024).
+
+<a id="ref18"></a>
+[[18]](https://doi.org/10.1093/nar/gkaf320) SOI: robust identification of orthologous synteny with the Orthology Index and broad applications in evolutionary genomics | Nucleic Acids Research | Oxford Academic. https://academic.oup.com/nar/article/53/7/gkaf320/8115929.
+
+<a id="ref19"></a>
+[[19]](https://doi.org/10.1093/nar/gkac387) Holm, L. Dali server: structural unification of protein families. Nucleic Acids Res 50, W210–W215 (2022).
+
+<a id="ref20"></a>
+[[20]](https://doi.org/10.1038/s41587-023-01773-0) van Kempen, M. et al. Fast and accurate protein structure search with Foldseek. Nat Biotechnol 42, 243–246 (2024).
+
+<a id="ref21"></a>
+[[21]](https://doi.org/10.1371/journal.pone.0012776) Inferring Regulatory Networks from Expression Data Using Tree-Based Methods | PLOS One. https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0012776.
+
+<a id="ref22"></a>
+[[22]](https://doi.org/10.1186/s12864-025-12061-3) Grünig, N. & Pucker, B. CoExpPhylo – a novel pipeline for biosynthesis gene discovery. BMC Genomics 26, 807 (2025).
+
+<a id="ref23"></a>
+[[23]](https://doi.org/10.1371/journal.pone.0294342) KIPEs3: Automatic annotation of biosynthesis pathways | PLOS One. https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0294342.
+
+<a id="ref24"></a>
+[[24]](https://doi.org/10.1038/s41598-026-55350-x) Natarajan, S. & Pucker, B. DupyliCate: mining, classifying, and characterizing gene duplications. Sci Rep 16, 16557 (2026).
+
+<a id="ref25"></a>
+[[25]](https://doi.org/10.1007/978-1-4939-3167-5_6) Bolser, D., Staines, D. M., Pritchard, E. & Kersey, P. Ensembl Plants: Integrating Tools for Visualizing, Mining, and Analyzing Plant Genomics Data. in Plant Bioinformatics: Methods and Protocols (ed. Edwards, D.) 115–140 (Springer, New York, NY, 2016). doi:10.1007/978-1-4939-3167-5_6.
+
+<a id="ref26"></a>
+[[26]](https://doi.org/10.1111/pbi.13583) Hassani-Pak, K. et al. KnetMiner: a comprehensive approach for supporting evidence-based gene discovery and complex trait analysis across species. Plant Biotechnology Journal 19, 1670–1678 (2021).
+
+<a id="ref27"></a>
+[[27]](https://doi.org/10.1093/nar/gkq1189) Marchler-Bauer, A. et al. CDD: a Conserved Domain Database for the functional annotation of proteins. Nucleic Acids Res 39, D225–D229 (2011).
+
+<a id="ref28"></a>
+[[28]](https://doi.org/10.1093/nar/gkaa913) Mistry, J. et al. Pfam: The protein families database in 2021. Nucleic Acids Res 49, D412–D419 (2021).
+
+<a id="ref29"></a>
+[[29]](https://doi.org/10.1093/molbev/msw046) Huerta-Cepas, J., Serra, F. & Bork, P. ETE 3: Reconstruction, Analysis, and Visualization of Phylogenomic Data. Mol Biol Evol 33, 1635–1638 (2016).
+
+<a id="ref30"></a>
+[[30]](https://doi.org/10.1093/nar/gky336) Proost, S. & Mutwil, M. CoNekT: an open-source framework for comparative genomic and transcriptomic network analyses. Nucleic Acids Res 46, W133–W140 (2018).
+
+<a id="ref31"></a>
+[[31]](https://doi.org/10.1093/bioinformatics/17.8.754) Huelsenbeck, J. P. & Ronquist, F. MRBAYES: Bayesian inference of phylogenetic trees. Bioinformatics 17, 754–755 (2001).
+
+<a id="ref32"></a>
+[[32]](https://doi.org/10.1093/nar/gky1085) Huerta-Cepas, J. et al. eggNOG 5.0: a hierarchical, functionally and phylogenetically annotated orthology resource based on 5090 organisms and 2502 viruses. Nucleic Acids Res 47, D309–D314 (2019).
+
+<a id="ref33"></a>
+[[33]](https://doi.org/10.1093/bioinformatics/btz305) Kozlov, A. M., Darriba, D., Flouri, T., Morel, B. & Stamatakis, A. RAxML-NG: a fast, scalable and user-friendly tool for maximum likelihood phylogenetic inference. Bioinformatics 35, 4453–4455 (2019).
+
+<a id="ref34"></a>
+[[34]](https://doi.org/10.1093/bioinformatics/btq228) Sukumaran, J. & Holder, M. T. DendroPy: a Python library for phylogenetic computing. Bioinformatics 26, 1569–1571 (2010).
+
+<a id="ref35"></a>
+[[35]](https://doi.org/10.1093/nar/gkae268) Letunic, I. & Bork, P. Interactive Tree of Life (iTOL) v6: recent updates to the phylogenetic tree display and annotation tool. Nucleic Acids Res 52, W78–W82 (2024).
+
+## References for research case studies and experimental methods used in them
+
+<a id="ref36"></a>
+[[36]](https://doi.org/10.7554/eLife.55646) Adamski, N. M. et al. A roadmap for gene functional characterisation in crops with large genomes: Lessons from polyploid wheat. eLife 9, e55646 (2020).
+
+<a id="ref37"></a>
+[[37]](https://doi.org/10.1038/s41438-020-00403-z) Jiang, M. et al. Brassica rapa orphan genes largely affect soluble sugar metabolism. Hortic Res 7, 181 (2020).
+
+<a id="ref38"></a>
+[[38]](https://doi.org/10.1126/science.1225829) Jinek, M. et al. A Programmable Dual-RNA–Guided DNA Endonuclease in Adaptive Bacterial Immunity. Science 337, 816–821 (2012).
+
+<a id="ref39"></a>
+[[39]](https://doi.org/10.1038/s41477-021-00958-2) Julca, I. et al. Comparative transcriptomic analysis reveals conserved programmes underpinning organogenesis and reproduction in land plants. Nat. Plants 7, 1143–1159 (2021).
+
+<a id="ref40"></a>
+[[40]](https://doi.org/10.1016/j.molp.2022.02.001) Ma, J. et al. Major episodes of horizontal gene transfer drove the evolution of land plants. Molecular Plant 15, 857–871 (2022).
+
+<a id="ref41"></a>
+[[41]](https://doi.org/10.1186/s12864-022-08819-8) Schilbert, H. M. & Glover, B. J. Analysis of flavonol regulator evolution in the Brassicaceae reveals MYB12, MYB111 and MYB21 duplications and MYB11 and MYB24 gene loss. BMC Genomics 23, 604 (2022).
+
+<a id="ref42"></a>
+[[42]](https://doi.org/10.1038/s41467-025-61686-1) Hakim, S. E. et al. Phylogenomics and metabolic engineering reveal a conserved gene cluster in Solanaceae plants for withanolide biosynthesis. Nat Commun 16, 6367 (2025).
+
+<a id="ref43"></a>
+[[43]](https://doi.org/10.1093/plcell/koag022) Chen, J. et al. Structure-guided discovery of protein functions in plants. Plant Cell 38, koag022 (2026).
+
 
 ## References for functional annotation tools
 
 <a id="ref1"></a>
-[1] Blum, M., Hobbs, E., Florentino, L. & Bateman, A. InterProScan 6: a modern large-scale protein function annotation pipeline. Bioinformatics Advances 6, vbag141 (2026).
+[[1]](https://doi.org/10.1093/bioadv/vbag141) Blum, M., Hobbs, E., Florentino, L. & Bateman, A. InterProScan 6: a modern large-scale protein function annotation pipeline. Bioinformatics Advances 6, vbag141 (2026).
 
 <a id="ref2"></a>
 [2] Schwacke, R. et al. MapMan4: A Refined Protein Classification and Annotation Framework Applicable to Multi-Omics Data Analysis. Molecular Plant 12, 879–892 (2019).
