@@ -1152,7 +1152,7 @@ shakunthalan/dupylicate:latest --gff /data/path/to/folder/sample.gff \
 ## References for functional annotation tools
 
 <a id="ref1"></a>
-[1] 1.  Blum, M., Hobbs, E., Florentino, L. & Bateman, A. InterProScan 6: a modern large-scale protein function annotation pipeline. Bioinformatics Advances 6, vbag141 (2026).
+[1] Blum, M., Hobbs, E., Florentino, L. & Bateman, A. InterProScan 6: a modern large-scale protein function annotation pipeline. Bioinformatics Advances 6, vbag141 (2026).
 
 <a id="ref2"></a>
 [2] Schwacke, R. et al. MapMan4: A Refined Protein Classification and Annotation Framework Applicable to Multi-Omics Data Analysis. Molecular Plant 12, 879–892 (2019).
