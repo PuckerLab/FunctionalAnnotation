@@ -4,6 +4,49 @@
 
 **Collection of command line protocols of functional annotation tools in plant genomics**
 
+| S.&nbsp;No. | Contents |
+|---|---|
+| [1](#overview) | <h3>Overview |
+| [2](#i-functional-annotation-tools) | <h3>I. Functional annotation tools</h3> |
+| [3](#i-functional-annotation-database-tools) | I. Functional annotation database tools |
+| [4](#1-interproscan6) | InterProScan6 |
+| [5](#2-mercator4) | Mercator4 |
+| [6](#3-kegg-automatic-annotation-server-kaas) | KEGG Automatic Annotation Server (KAAS) |
+| [7](#4-blast2go) | Blast2GO |
+| [8](#ii-ortholog-finding-tools) | II. Ortholog finding tools |
+| [9](#5-orthofinder) | OrthoFinder |
+| [10](#6-shoot) | SHOOT |
+| [11](#7-fastoma) | FASTOMA |
+| [12](#iii-sequence-similarity-based-tools-aligners) | III. Sequence similarity based tools (aligners) |
+| [13](#8-blast) | BLAST |
+| [14](#transferring-functions-with-construct_annopy) | Transferring functions with construct_anno.py |
+| [15](#9-diamond) | DIAMOND |
+| [16](#10-mafft) | MAFFT |
+| [17](#11-muscle5) | Muscle5 |
+| [18](#iv-phylogeny-analysis-tools) | IV. Phylogeny analysis tools |
+| [19](#pre-processing-step-for-tree-building) | Pre-processing step for tree building |
+| [20](#12-iq-tree3) | IQ-TREE3 |
+| [21](#13-fasttree) | FastTree |
+| [22](#v-synteny-analysis-tools) | V. Synteny analysis tools |
+| [23](#14-jcvi-mcscan) | JCVI/ MCScan |
+| [24](#15-soi) | SOI |
+| [25](#vi-protein-structure-based-annotation-tools) | VI. Protein structure-based annotation tools |
+| [26](#16-dali) | Dali |
+| [27](#dali-server) | Dali server |
+| [28](#dalilitev5-standalone-software) | DaliLite.v5 standalone software |
+| [29](#17-foldseek) | Foldseek |
+| [30](#foldseek-server) | Foldseek server |
+| [31](#foldseek-standalone-software) | Foldseek standalone software |
+| [32](#vii-expression-analysis-based-annotation-tools) | VII. Expression analysis-based annotation tools |
+| [33](#18-genie3) | GENIE3 |
+| [34](#viii-annotation-tools-employing-combined-approaches) | VIII. Annotation tools employing combined approaches |
+| [35](#19-coexpphylo) | CoExpPhylo |
+| [36](#20-kipes) | KIPEs |
+| [37](#21-dupylicate) | DupyliCate |
+| [38](#ii-research-use-case-based-compilation-of-functional-annotation-approaches-from-selected-research-case-studies) | <h3>II. Research use case-based compilation of functional annotation approaches from selected research case studies</h3> |
+| [39](#references-for-functional-annotation-tools) | References for functional annotation tools |
+| [40](#references-for-research-case-studies-and-experimental-methods-used-in-them) | References for research case studies and experimental methods used in them |
+
 # Overview
 
 Many tools are available for various tasks in plant genomics. Finding the right tool for a certain purpose can be challenging. This repository provides an overview of recommended tools specifically for functional annotation in plant genomics in the first section. This documentation is a guide elucidating step-by-step usage of some widely used functional annotation tools in plant genomics. It is important to note that the installation method outlined for each of the tools is based on the ease-of-installation for users of all levels, and the possibility of errors and bugs that can be encountered while doing so. Hence, the installation method detailed can differ from the officially recommended installation methods in the respective tools' documentation pages. Further, the tools covered range from user-friendly databases to advanced command-line tools. This will be of use to biologists interested in functional annotation of genes of interest in their own research. Each of the commands and usage instructions here are based on an example file named 'sample' and need to adapted based on the user's own use-case. If the user is not familiar with linux environment and packages for software installation, it is first recommended to read these relevant guidelines specified in https://github.com/PuckerLab/PlantGenomicsGuide. The second section of this repository provides example-based guidance for various functional annotation approaches using selected research case studies.
